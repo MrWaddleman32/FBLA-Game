@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmwmgntulu367"]
+
+[ext_resource type="PackedScene" uid="uid://cu55pejndo8j3" path="res://character_body_3d.tscn" id="1_oj3tl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ryoud"]
+size = Vector3(7.065, 0.195, 6.02)
+
+[sub_resource type="BoxMesh" id="BoxMesh_oj3tl"]
+
+[node name="Floor" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_ryoud")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(6.86, 0, 0, 0, 0.2, 0, 0, 0, 5.785, 0, 0, 0)
+mesh = SubResource("BoxMesh_oj3tl")
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_oj3tl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.84172297, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.651026, 0.7590555, 0, -0.7590555, 0.651026, -0.16232061, 3.1524942, 3.457158)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.79047585, 0.6124933, 0, -0.6124933, 0.79047585, -0.60100937, 4.614808, 4.0890408)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7733355, 0.06591201, 0.006058097)
+use_collision = true
+size = Vector3(4.6342773, 1, 5.7700195)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.97664976, -0.2148376, 0, 0.2148376, 0.97664976, 0, 0, 0, 1, 10.339913, 0.53890824, -0.004468322)
+size = Vector3(4.425232, 1, 5.9275208)

@@ -1,0 +1,50 @@
+[gd_scene load_steps=11 format=3 uid="uid://cu55pejndo8j3"]
+
+[ext_resource type="Script" uid="uid://dxjmwdlj5dcrl" path="res://player.gd" id="1_iwpo4"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_fb3t6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vd578"]
+albedo_color = Color(0.10980392, 1, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_c7tqt"]
+material = SubResource("StandardMaterial3D_vd578")
+
+[sub_resource type="Gradient" id="Gradient_iwpo4"]
+colors = PackedColorArray(0.5409905, 0.5409905, 0.5409905, 1, 0.61745477, 0.61745477, 0.6174547, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fb3t6"]
+gradient = SubResource("Gradient_iwpo4")
+
+[sub_resource type="Curve" id="Curve_vd578"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.4015152, 1), 0.0, 0.0, 0, 0, Vector2(0.49242425, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_c7tqt"]
+curve = SubResource("Curve_vd578")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_nl27k"]
+initial_velocity_min = 0.5
+initial_velocity_max = 2.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_c7tqt")
+color = Color(0.6156863, 0.6156863, 0.627451, 1)
+color_ramp = SubResource("GradientTexture1D_fb3t6")
+
+[sub_resource type="QuadMesh" id="QuadMesh_obynr"]
+size = Vector2(0.2, 0.2)
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_iwpo4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_fb3t6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_c7tqt")
+
+[node name="DustTrail" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.046450734, -0.30647796, -0.11847496)
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_nl27k")
+draw_pass_1 = SubResource("QuadMesh_obynr")
