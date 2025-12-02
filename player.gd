@@ -6,6 +6,7 @@ const JUMP_VELOCITY = 4.5
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var coyote_time := 0.15
 var coyote_counter := 0.0
+var respawn_position = Vector3(0,1,0)
 @onready var dust_trail := $DustTrail
 
 func _physics_process(delta: float) -> void:
@@ -25,6 +26,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("move_down"):
 		direction.z = 1
 	
+	
 	direction = direction.normalized()
 	
 	if Input.is_action_pressed("sprint"):
@@ -35,6 +37,10 @@ func _physics_process(delta: float) -> void:
 	else:
 		dust_trail.emitting = false
 		SPEED = 5.0
+	
+	if global_transform.origin.y < -10:
+		global_transform.origin = respawn_position
+		velocity = Vector3.ZERO
 	
 	
 	velocity.x = direction.x * SPEED

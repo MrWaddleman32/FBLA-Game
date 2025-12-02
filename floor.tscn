@@ -22,7 +22,7 @@ mesh = SubResource("BoxMesh_oj3tl")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.84172297, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 0.651026, 0.7590555, 0, -0.7590555, 0.651026, -0.16232061, 3.1524942, 3.457158)
+transform = Transform3D(0.9997643, -0.0033016887, -0.02145718, 0.014542511, 0.8356998, 0.54899406, 0.01611915, -0.5491767, 0.83555084, -0.021899462, 1.9904943, 3.2647376)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.79047585, 0.6124933, 0, -0.6124933, 0.79047585, -0.60100937, 4.614808, 4.0890408)
@@ -31,10 +31,10 @@ transform = Transform3D(1, 0, 0, 0, 0.79047585, 0.6124933, 0, -0.6124933, 0.7904
 use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7733355, 0.06591201, 0.006058097)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18527293, 0.06591201, -5.7776403)
 use_collision = true
 size = Vector3(4.6342773, 1, 5.7700195)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.97664976, -0.2148376, 0, 0.2148376, 0.97664976, 0, 0, 0, 1, 10.339913, 0.53890824, -0.004468322)
+transform = Transform3D(0.97664976, -0.2148376, 0, 0.2148376, 0.97664976, 0, 0, 0, 1, -0.48208046, 0.5389085, -13.170909)
 size = Vector3(4.425232, 1, 5.9275208)
