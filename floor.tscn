@@ -21,7 +21,7 @@ size = Vector3(7.065, 0.195, 6.02)
 [sub_resource type="BoxMesh" id="BoxMesh_oj3tl"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oj3tl"]
-size = Vector3(1, 1, 7.32135)
+size = Vector3(0.08886719, 1.1953735, 0.40317535)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_oj3tl"]
 
@@ -40,10 +40,10 @@ transform = Transform3D(6.86, 0, 0, 0, 0.2, 0, 0, 0, 5.785, 0, 0, 0)
 mesh = SubResource("BoxMesh_oj3tl")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_oj3tl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.84172297, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.84172297, -0.014603138)
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
-transform = Transform3D(0.9997643, -0.0033016887, -0.02145718, 0.014542511, 0.8356998, 0.54899406, 0.01611915, -0.5491767, 0.83555084, -0.021899462, 1.9904943, 3.2647376)
+transform = Transform3D(1.8863479, -0.0062296013, -0.040485248, 0.027438702, 1.5767921, 1.0358379, 0.030413497, -1.0361825, 1.576511, -0.021899462, 3.5605898, 5.0928974)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.79047585, 0.6124933, 0, -0.6124933, 0.79047585, -0.60100937, 4.614808, 4.0890408)
@@ -60,11 +60,15 @@ size = Vector3(4.6342773, 1, 5.7700195)
 transform = Transform3D(0.97664976, -0.2148376, 0, 0.2148376, 0.97664976, 0, 0, 0, 1, -0.48208046, 0.5389085, -13.170909)
 size = Vector3(4.425232, 1, 5.9275208)
 
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -44.112232)
+size = Vector3(19, 1, 52.69)
+
 [node name="Area3D" type="Area3D" parent="."]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -2.519, 1.23, 2.682)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(0.62849855, -0.77762765, -0.016927712, 0.77728724, 0.6271292, 0.05034752, -0.02853575, -0.04480103, 0.99858814, -0.15009832, -0.9638684, -1.3396235)
+transform = Transform3D(0.99940234, -0.0048872456, -0.034217693, 0.034246393, 0.0059237205, 0.99939543, -0.004681669, -0.9999718, 0.0060874233, -0.14938599, 0.022039086, -0.5467786)
 shape = SubResource("BoxShape3D_oj3tl")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]

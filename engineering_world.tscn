@@ -35,10 +35,10 @@ use_collision = true
 size = Vector3(19.99414, 1, 52.69043)
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_kmu22")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.40231764, 0.44224226, 0.10697675)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.40231764, 0.44224226, 0.10697675)
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 0.89977115, 0.43636212, 0, -0.43636212, 0.89977115, -0.10712272, 1.7983612, 2.8063781)
+transform = Transform3D(1.8795412, -0.005784514, -0.041132312, 0.027423274, 1.5710785, 1.0321629, 0.03119762, -1.0325111, 1.5707793, 0.22000003, 3.5610003, 5.0930004)
 
 [node name="TPToMain" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7471918, 0, -12.39326)

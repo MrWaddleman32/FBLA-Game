@@ -8,9 +8,11 @@ var coyote_time := 0.15
 var coyote_counter := 0.0
 var respawn_position = Vector3(0,1,0)
 @onready var dust_trail := $DustTrail
+@onready var anim_tree = $AnimationTree
+@onready var state_machine = anim_tree.get("parameters/playback")
+@onready var mesh = $MeshInstance3D
 
 func _physics_process(delta: float) -> void:
-	
 	if is_on_floor():
 		coyote_counter = coyote_time
 	else:
@@ -19,15 +21,25 @@ func _physics_process(delta: float) -> void:
 	var direction = Vector3()
 	if Input.is_action_pressed("move_left"):
 		direction.x = -1
+		mesh.rotation_degrees.y = 270
 	if Input.is_action_pressed("move_right"):
 		direction.x = 1
+		mesh.rotation_degrees.y = 90
 	if Input.is_action_pressed("move_up"):
 		direction.z = -1
+		mesh.rotation_degrees.y = 180
 	if Input.is_action_pressed("move_down"):
 		direction.z = 1
+		mesh.rotation_degrees.y = 0
 	
+	var horizontal_velocity = Vector3(velocity.x, 0, velocity.z)
+	var moving = horizontal_velocity.length() > 0.1
+	print(moving)
+	anim_tree.set("parameters/conditions/is_moving", moving)
+	anim_tree.set("parameters/conditions/is_idle", !moving)
 	
 	direction = direction.normalized()
+	
 	
 	if Input.is_action_pressed("sprint"):
 		dust_trail.emitting = true
