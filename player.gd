@@ -19,22 +19,34 @@ func _physics_process(delta: float) -> void:
 		coyote_counter -= delta
 
 	var direction = Vector3()
+	var moving_up_right = Input.is_action_pressed("move_right") && Input.is_action_pressed("move_up")
+	var moving_up_left = Input.is_action_pressed("move_left") && Input.is_action_pressed("move_up")
+	var moving_down_right = Input.is_action_pressed("move_right") && Input.is_action_pressed("move_down")
+	var moving_down_left = Input.is_action_pressed("move_left") && Input.is_action_pressed("move_down")
+	print(moving_up_right)
 	if Input.is_action_pressed("move_left"):
 		direction.x = -1
 		mesh.rotation_degrees.y = 270
-	if Input.is_action_pressed("move_right"):
+	elif Input.is_action_pressed("move_right"):
 		direction.x = 1
 		mesh.rotation_degrees.y = 90
 	if Input.is_action_pressed("move_up"):
 		direction.z = -1
 		mesh.rotation_degrees.y = 180
-	if Input.is_action_pressed("move_down"):
+	elif Input.is_action_pressed("move_down"):
 		direction.z = 1
 		mesh.rotation_degrees.y = 0
+	if moving_up_right:
+		mesh.rotation_degrees.y = 135
+	if moving_up_left:
+		mesh.rotation_degrees.y = 225
+	if moving_down_right:
+		mesh.rotation_degrees.y = 45
+	if moving_down_left:
+		mesh.rotation_degrees.y = 315
 	
 	var horizontal_velocity = Vector3(velocity.x, 0, velocity.z)
 	var moving = horizontal_velocity.length() > 0.1
-	print(moving)
 	anim_tree.set("parameters/conditions/is_moving", moving)
 	anim_tree.set("parameters/conditions/is_idle", !moving)
 	
