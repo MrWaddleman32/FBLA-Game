@@ -129,6 +129,7 @@ mesh = ExtResource("2_fb3t6")
 [node name="DustTrail" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.046450734, -0.30647796, -0.11847496)
 emitting = false
+speed_scale = 3.81
 process_material = SubResource("ParticleProcessMaterial_nl27k")
 draw_pass_1 = SubResource("QuadMesh_obynr")
 

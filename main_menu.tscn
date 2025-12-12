@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=3 uid="uid://bdrndwb21pow6"]
+
+[ext_resource type="Script" uid="uid://dq54488uetsha" path="res://Buttons_controller.gd" id="1_06t4h"]
+[ext_resource type="Texture2D" uid="uid://dvvdpf4fo4uq2" path="res://Button Sprites/playbutton.png" id="2_7vrkn"]
+[ext_resource type="Texture2D" uid="uid://crrs670pbtpyd" path="res://Button Sprites/PlayBtnHover.png" id="3_fu7sn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rhts7"]
+font_size = 50
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fu7sn"]
+texture = ExtResource("2_7vrkn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7vrkn"]
+texture = ExtResource("3_fu7sn")
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_06t4h")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -209.0
+offset_right = 209.0
+offset_bottom = 163.0
+grow_horizontal = 2
+text = "Main menu type shi"
+label_settings = SubResource("LabelSettings_rhts7")
+horizontal_alignment = 1
+
+[node name="PlayButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -243.0
+offset_top = -136.0
+offset_right = 219.25
+offset_bottom = 123.25
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 66
+theme_override_styles/normal = SubResource("StyleBoxTexture_fu7sn")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7vrkn")
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]

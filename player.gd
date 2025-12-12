@@ -23,7 +23,6 @@ func _physics_process(delta: float) -> void:
 	var moving_up_left = Input.is_action_pressed("move_left") && Input.is_action_pressed("move_up")
 	var moving_down_right = Input.is_action_pressed("move_right") && Input.is_action_pressed("move_down")
 	var moving_down_left = Input.is_action_pressed("move_left") && Input.is_action_pressed("move_down")
-	print(moving_up_right)
 	if Input.is_action_pressed("move_left"):
 		direction.x = -1
 		mesh.rotation_degrees.y = 270
@@ -53,7 +52,7 @@ func _physics_process(delta: float) -> void:
 	direction = direction.normalized()
 	
 	
-	if Input.is_action_pressed("sprint"):
+	if Input.is_action_pressed("sprint") && moving:
 		dust_trail.emitting = true
 		SPEED = 7.5
 		if not is_on_floor():
