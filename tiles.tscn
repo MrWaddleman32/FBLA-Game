@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://23bq0okq8r64"]
+
+[ext_resource type="ArrayMesh" uid="uid://c6vni0sx2j080" path="res://Models/TileModels/Grass_Block.vox.obj" id="1_7h0kd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k6t24"]
+size = Vector3(1.5909424, 1.5688477, 1.5849762)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="GrassBlock_vox" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+mesh = ExtResource("1_7h0kd")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GrassBlock_vox"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GrassBlock_vox/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.001159668, 0.81274414, -0.0118637085)
+shape = SubResource("BoxShape3D_k6t24")

@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bmwmgntulu367"]
+[gd_scene load_steps=8 format=3 uid="uid://bmwmgntulu367"]
 
 [ext_resource type="PackedScene" uid="uid://cu55pejndo8j3" path="res://character_body_3d.tscn" id="1_oj3tl"]
+[ext_resource type="MeshLibrary" uid="uid://i67yee15xkw5" path="res://Models/Tilemesh/Tiles.tres" id="2_cgngl"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oj3tl"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -15,11 +16,6 @@ sky = SubResource("Sky_cgngl")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ryoud"]
-size = Vector3(7.065, 0.195, 6.02)
-
-[sub_resource type="BoxMesh" id="BoxMesh_oj3tl"]
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_oj3tl"]
 size = Vector3(0.08886719, 1.1953735, 0.40317535)
 
@@ -29,15 +25,6 @@ size = Vector3(0.08886719, 1.1953735, 0.40317535)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_wd3ws")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("BoxShape3D_ryoud")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-transform = Transform3D(6.86, 0, 0, 0, 0.2, 0, 0, 0, 5.785, 0, 0, 0)
-mesh = SubResource("BoxMesh_oj3tl")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_oj3tl")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.84172297, -0.014603138)
@@ -74,6 +61,14 @@ shape = SubResource("BoxShape3D_oj3tl")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
 transform = Transform3D(0.0015358799, 0.21999463, 0, -0.21999463, 0.0015358799, 0, 0, 0, 0.61, -0.11413646, 0, -0.54199827)
 mesh = SubResource("PlaneMesh_oj3tl")
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("2_cgngl")
+cell_size = Vector3(1, 1, 1)
+data = {
+"cells": PackedInt32Array(-131070, 1, 655360, -131069, 1, 655360, -131068, 1, 655360, -131067, 1, 655360, -131066, 0, 655360, -131066, 65535, 655360, -131067, 65535, 655360, -131068, 65535, 655360, -131069, 65535, 655360, -131070, 65535, 655360, -131071, 65535, 655360, -131072, 65535, 655360, -131072, 0, 655360, -131071, 0, 655360, -131070, 0, 655360, -131069, 0, 655360, -131066, 65534, 655360, -131067, 65534, 655360, -131067, 0, 655360, -131068, 0, 655360, -131072, 1, 655360, -65537, 1, 655360, -65538, 1, 655360, -65539, 1, 655360, -65540, 1, 655360, -131071, 1, 655360, -131068, 2, 655360, -131069, 2, 655360, -65537, 2, 655360, -131072, 2, 655360, -131071, 2, 655360, -131071, 3, 655360, -131070, 3, 655360, -131069, 3, 655360, -131070, 2, 655360, -65538, 2, 655360, -65539, 2, 655360, -65540, 2, 655360, -65541, 2, 655360, -65541, 3, 655360, -65540, 3, 655360, -65539, 3, 655360, -65538, 3, 655360, -65537, 3, 655360, -131072, 3, 655360, -65539, 0, 655360, -65540, 0, 655360, -65540, 65535, 655360, -65541, 65535, 655360, -65541, 0, 655360, -65542, 0, 655360, -65543, 0, 655360, -65544, 0, 655360, -65545, 0, 655360, -65545, 65535, 655360, -65546, 65535, 655360, -65547, 65535, 655360, -65547, 65534, 655360, -65548, 65534, 655360, -65548, 65533, 655360, -65548, 65532, 655360, -65547, 65532, 655360, -65546, 65531, 655360, -65545, 65532, 655360, -65544, 65532, 655360, -65543, 65532, 655360, -65542, 65532, 655360, -65541, 65532, 655360, -65540, 65533, 655360, -65539, 65533, 655360, -65538, 65533, 655360, -65538, 65534, 655360, -65537, 65535, 655360, -65537, 0, 655360, -65538, 0, 655360, -65538, 65535, 655360, -65539, 65535, 655360, -65537, 65534, 655360, -131072, 65533, 655360, -65537, 65533, 655360, -65538, 65532, 655360, -65539, 65532, 655360, -65541, 65533, 655360, -65541, 65534, 655360, -65540, 65534, 655360, -131070, 65534, 655360, -131069, 65533, 655360, -131069, 65532, 655360, -131070, 65532, 655360, -131071, 65532, 655360, -131072, 65532, 655360, -131071, 65533, 655360, -131070, 65531, 655360, -65537, 65532, 655360, -131070, 65533, 655360)
+}
+metadata/_editor_floor_ = Vector3(0, -2, 0)
 
 [connection signal="area_entered" from="Area3D" to="CharacterBody3D" method="_on_area_3d_area_entered"]
 [connection signal="body_entered" from="Area3D" to="CharacterBody3D" method="_on_area_3d_body_entered"]
