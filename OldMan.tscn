@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxnpi315xnmmk"]
+
+[ext_resource type="Script" uid="uid://dy2pledj53vm7" path="res://old_man.gd" id="1_b01t7"]
+[ext_resource type="ArrayMesh" uid="uid://bv7iwnck3dpkq" path="res://Models/EntityModels/OldManIdle.vox.obj" id="1_jjy1p"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jjy1p"]
+size = Vector3(0.5, 0.60894775, 0.39315796)
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_b01t7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_jjy1p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.42251587, 0.22795105)
+shape = SubResource("BoxShape3D_jjy1p")

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvknmifw81tnk"
-path.bptc="res://.godot/imported/Grass_Block.vox.png-842a38809bd59ac172e6382adb4e7c7b.bptc.ctex"
+uid="uid://d0pmcqlrgn7n6"
+path.bptc="res://.godot/imported/OldManIdle.vox.png-b92c2ff39736eee0b86a18cec6660f17.bptc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Models/TileModels/Grass_Block.vox.png"
-dest_files=["res://.godot/imported/Grass_Block.vox.png-842a38809bd59ac172e6382adb4e7c7b.bptc.ctex"]
+source_file="res://Models/EntityModels/OldManIdle.vox.png"
+dest_files=["res://.godot/imported/OldManIdle.vox.png-b92c2ff39736eee0b86a18cec6660f17.bptc.ctex"]
 
 [params]
 
