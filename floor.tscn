@@ -33,10 +33,11 @@ environment = SubResource("Environment_wd3ws")
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0040779114)
 shape = SubResource("BoxShape3D_ryoud")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-transform = Transform3D(6.86, 0, 0, 0, 0.2, 0, 0, 0, 5.785, 0, 0, 0)
+transform = Transform3D(6.86, 0, 0, 0, 0.2, 0, 0, 0, 5.785, -0.24302292, 0.24385071, -0.01903534)
 mesh = SubResource("BoxMesh_oj3tl")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_oj3tl")]
