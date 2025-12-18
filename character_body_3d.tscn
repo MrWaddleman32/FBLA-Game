@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cu55pejndo8j3"]
+[gd_scene load_steps=23 format=3 uid="uid://cu55pejndo8j3"]
 
 [ext_resource type="Script" uid="uid://dxjmwdlj5dcrl" path="res://player.gd" id="1_iwpo4"]
 [ext_resource type="ArrayMesh" uid="uid://dyp04eqo7q7md" path="res://Models/PlayerModels/CharacterSprite2.vox.obj" id="2_fb3t6"]
@@ -6,10 +6,7 @@
 [ext_resource type="ArrayMesh" uid="uid://c7rgtjqnbgawt" path="res://Models/PlayerModels/CharacterSprite1.vox.obj" id="3_vd578"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fb3t6"]
-size = Vector3(0.5623779, 0.72654724, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_c7tqt"]
-size = Vector3(0.95687866, 0.5513916, 1)
+size = Vector3(0.8642273, 1.5095196, 0.26927948)
 
 [sub_resource type="Gradient" id="Gradient_iwpo4"]
 colors = PackedColorArray(0.5409905, 0.5409905, 0.5409905, 1, 0.61745477, 0.61745477, 0.6174547, 0)
@@ -123,12 +120,8 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 script = ExtResource("1_iwpo4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.021201983, 0.43173677, -0.010931015)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.057807818, 0.7882994, 0.14096642)
 shape = SubResource("BoxShape3D_fb3t6")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.010105848, 1.1730969, 0.0038888454)
-shape = SubResource("BoxShape3D_c7tqt")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("2_fb3t6")
