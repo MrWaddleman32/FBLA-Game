@@ -31,7 +31,7 @@ environment = SubResource("Environment_wd3ws")
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.84172297, -0.014603138)
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
-transform = Transform3D(1.8863479, -0.0062296013, -0.040485248, 0.027438702, 1.5767921, 1.0358379, 0.030413497, -1.0361825, 1.576511, -0.021899462, 3.5605898, 5.0928974)
+transform = Transform3D(1.9996954, -0.03490505, 4.1388427e-07, 0.030228453, 1.731787, 1, -0.017452883, -0.9998477, 1.7320508, -0.059999254, 3.56, 4.93)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.79047585, 0.6124933, 0, -0.6124933, 0.79047585, -0.60100937, 4.614808, 4.0890408)
