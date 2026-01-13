@@ -23,7 +23,7 @@ var respawn_position: Vector3 = Vector3(0, 1, 0)
 @export var camera_pivot: Node3D
 @export var camera: Camera3D
 
-@export var camera_speed: float = 1.5
+@export var camera_speed: float = 2.5
 @export var camera_distance: float = -6.0
 @export var camera_height: float = 2.0
 
