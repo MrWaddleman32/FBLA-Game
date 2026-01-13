@@ -1,102 +1,133 @@
 extends CharacterBody3D
 
-var SPEED = 5.0
-const JUMP_VELOCITY = 4.5
-var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+# -----------------------
+# Player settings
+# -----------------------
+var SPEED: float = 5.0
+const JUMP_VELOCITY: float = 4.5
+var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 var coyote_time := 0.15
 var coyote_counter := 0.0
+var respawn_position: Vector3 = Vector3(0, 1, 0)
 
-var respawn_position = Vector3(0, 1, 0)
-
-@onready var dust_trail := $DustTrail
-@onready var anim_tree = $AnimationTree
+@onready var dust_trail: GPUParticles3D = $DustTrail
+@onready var anim_tree: AnimationTree = $AnimationTree
 @onready var state_machine = anim_tree.get("parameters/playback")
-@onready var mesh = $MeshInstance3D
-@onready var collision_1 = $CollisionShape3D
-@export var mouse_sensitivity := 0.002
-@onready var camera = $Camera3D
+@onready var mesh: MeshInstance3D = $MeshInstance3D
+@onready var collision_1: CollisionShape3D = $CollisionShape3D
 
-var pitch := 0.0
+# -----------------------
+# Camera settings (assign in inspector)
+# -----------------------
+@export var camera_pivot: Node3D
+@export var camera: Camera3D
 
+@export var camera_speed: float = 1.5
+@export var camera_distance: float = -6.0
+@export var camera_height: float = 2.0
+
+# Internal camera rotation
+var cam_yaw: float = 0.0
+var cam_pitch: float = deg_to_rad(-20)
+
+# -----------------------
+# Input (mouse rotation removed)
+# -----------------------
 func _unhandled_input(event):
-	# Removed mouse rotation entirely
 	pass
 
+# -----------------------
+# Player movement & camera
+# -----------------------
 func _physics_process(delta: float) -> void:
+	# Coyote time
 	if is_on_floor():
 		coyote_counter = coyote_time
 	else:
 		coyote_counter -= delta
 
-	var direction = Vector3()
-	var moving_up_right = Input.is_action_pressed("move_right") and Input.is_action_pressed("move_up")
-	var moving_up_left = Input.is_action_pressed("move_left") and Input.is_action_pressed("move_up")
-	var moving_down_right = Input.is_action_pressed("move_right") and Input.is_action_pressed("move_down")
-	var moving_down_left = Input.is_action_pressed("move_left") and Input.is_action_pressed("move_down")
+	# -----------------------
+	# Camera orbit (Roblox-style)
+	# -----------------------
+	if camera_pivot and camera:
+		var cam_input: Vector2 = Vector2(
+			Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
+			Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+		)
 
-	if Input.is_action_pressed("move_left"):
-		direction.x = -1
-		mesh.rotation_degrees.y = 270
-		collision_1.rotation_degrees.y = 270
-	elif Input.is_action_pressed("move_right"):
-		direction.x = 1
-		mesh.rotation_degrees.y = 90
-		collision_1.rotation_degrees.y = 90
+		# Update yaw and pitch
+		cam_yaw -= cam_input.x * camera_speed * delta
+		cam_pitch = clamp(cam_pitch - cam_input.y * camera_speed * delta, deg_to_rad(-30), deg_to_rad(60))
 
-	if Input.is_action_pressed("move_up"):
-		direction.z = -1
-		mesh.rotation_degrees.y = 180
-		collision_1.rotation_degrees.y = 180
-	elif Input.is_action_pressed("move_down"):
-		direction.z = 1
-		mesh.rotation_degrees.y = 0
-		collision_1.rotation_degrees.y = 0
+		# Rotate pivot
+		camera_pivot.rotation = Vector3(cam_pitch, cam_yaw, 0)
 
-	if moving_up_right:
-		mesh.rotation_degrees.y = 135
-		collision_1.rotation_degrees.y = 135
-	if moving_up_left:
-		mesh.rotation_degrees.y = 225
-		collision_1.rotation_degrees.y = 225
-	if moving_down_right:
-		mesh.rotation_degrees.y = 45
-		collision_1.rotation_degrees.y = 45
-	if moving_down_left:
-		mesh.rotation_degrees.y = 315
-		collision_1.rotation_degrees.y = 315
+		# Keep camera at offset behind pivot
+		camera.transform.origin = Vector3(0, camera_height, -camera_distance)
 
-	var horizontal_velocity = Vector3(velocity.x, 0, velocity.z)
-	var moving = horizontal_velocity.length() > 0.1
-	anim_tree.set("parameters/conditions/is_moving", moving)
-	anim_tree.set("parameters/conditions/is_idle", !moving)
+	# -----------------------
+	# Player movement relative to camera
+	# -----------------------
+	var input_dir = Input.get_vector("move_left", "move_right", "move_down", "move_up") # Vector2
+	var cam_forward = -camera_pivot.global_transform.basis.z
+	var cam_right = camera_pivot.global_transform.basis.x
 
-	direction = direction.normalized()
+	# Flatten to horizontal plane
+	cam_forward.y = 0
+	cam_right.y = 0
+	cam_forward = cam_forward.normalized()
+	cam_right = cam_right.normalized()
 
-	if Input.is_action_pressed("sprint") and moving:
-		dust_trail.emitting = true
+	var direction = (cam_forward * input_dir.y + cam_right * input_dir.x).normalized()
+
+	# Rotate mesh to face movement direction (fixed)
+	if direction.length() > 0.1:
+		var move_angle = atan2(direction.x, direction.z)
+		mesh.rotation.y = move_angle
+
+	# -----------------------
+	# Sprint
+	# -----------------------
+	if Input.is_action_pressed("sprint") and direction.length() > 0.1:
+		dust_trail.emitting = is_on_floor()
 		SPEED = 7.5
-		if not is_on_floor():
-			dust_trail.emitting = false
 	else:
 		dust_trail.emitting = false
 		SPEED = 5.0
 
-	if global_transform.origin.y < -10:
-		global_transform.origin = respawn_position
-		velocity = Vector3.ZERO
-
+	# -----------------------
+	# Apply movement
+	# -----------------------
 	velocity.x = direction.x * SPEED
 	velocity.z = direction.z * SPEED
 
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
+	# -----------------------
+	# Jump
+	# -----------------------
 	if Input.is_action_pressed("jump") and coyote_counter > 0:
 		velocity.y = JUMP_VELOCITY
 		coyote_counter = 0.0
 
 	move_and_slide()
+
+	# -----------------------
+	# Animation
+	# -----------------------
+	var horizontal_velocity: Vector3 = Vector3(velocity.x, 0, velocity.z)
+	var moving: bool = horizontal_velocity.length() > 0.1
+	anim_tree.set("parameters/conditions/is_moving", moving)
+	anim_tree.set("parameters/conditions/is_idle", !moving)
+
+	# -----------------------
+	# Respawn
+	# -----------------------
+	if global_transform.origin.y < -10:
+		global_transform.origin = respawn_position
+		velocity = Vector3.ZERO
 
 # -----------------------
 # Teleports

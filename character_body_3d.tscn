@@ -115,9 +115,11 @@ states/Walk/position = Vector2(460.26025, 82)
 transitions = ["Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_nl27k"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_obynr"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_jvo56")]
 graph_offset = Vector2(56.26024, 0)
 
-[node name="CharacterBody3D" type="CharacterBody3D"]
+[node name="CharacterBody3D" type="CharacterBody3D" node_paths=PackedStringArray("camera_pivot", "camera")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 script = ExtResource("1_iwpo4")
+camera_pivot = NodePath("CameraPivot")
+camera = NodePath("CameraPivot/Camera3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.057807818, 0.7882994, 0.14096642)
@@ -143,3 +145,10 @@ tree_root = SubResource("AnimationNodeStateMachine_1igb4")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/is_idle = false
 parameters/conditions/is_moving = false
+
+[node name="CameraPivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.98795986, 0.1547104, 0, -0.1547104, 0.98795986, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+transform = Transform3D(2, 0, 0, 0, 1.9318517, 0.51763815, 0, -0.51763815, 1.9318516, 0, 2, 6)
+current = true
