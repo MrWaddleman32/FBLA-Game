@@ -1,16 +1,16 @@
 [gd_scene load_steps=4 format=3 uid="uid://bxnpi315xnmmk"]
 
-[ext_resource type="Script" uid="uid://dy2pledj53vm7" path="res://old_man.gd" id="1_b01t7"]
-[ext_resource type="ArrayMesh" uid="uid://bv7iwnck3dpkq" path="res://Models/EntityModels/OldManIdle.vox.obj" id="1_jjy1p"]
+[ext_resource type="Script" uid="uid://dy2pledj53vm7" path="res://Scripts/old_man.gd" id="1_6nx7i"]
+[ext_resource type="ArrayMesh" uid="uid://bv7iwnck3dpkq" path="res://Models/EntityModels/OldManIdle.vox.obj" id="2_urkuq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jjy1p"]
 size = Vector3(0.7248535, 0.851387, 0.39315796)
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
-script = ExtResource("1_b01t7")
+script = ExtResource("1_6nx7i")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = ExtResource("1_jjy1p")
+mesh = ExtResource("2_urkuq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008666992, 0.41459775, 0.22795105)

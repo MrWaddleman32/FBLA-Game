@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://btkeb1s7j4dh8"]
 
-[ext_resource type="Script" uid="uid://0wbxgel4j0ey" path="res://beg_cut_scene.gd" id="1_t472g"]
+[ext_resource type="Script" uid="uid://0wbxgel4j0ey" path="res://Scripts/beg_cut_scene.gd" id="1_t472g"]
 [ext_resource type="MeshLibrary" uid="uid://dwm78pgmrtbn5" path="res://Models/Tilemesh/GrassTest4.tres" id="1_xa28p"]
-[ext_resource type="PackedScene" uid="uid://cu55pejndo8j3" path="res://character_body_3d.tscn" id="2_t472g"]
+[ext_resource type="PackedScene" uid="uid://cu55pejndo8j3" path="res://Scenes/character_body_3d.tscn" id="2_t472g"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xa28p"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)

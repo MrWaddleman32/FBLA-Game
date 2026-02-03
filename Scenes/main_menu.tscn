@@ -1,17 +1,17 @@
 [gd_scene load_steps=7 format=3 uid="uid://bdrndwb21pow6"]
 
-[ext_resource type="Script" uid="uid://dq54488uetsha" path="res://Buttons_controller.gd" id="1_06t4h"]
-[ext_resource type="Texture2D" uid="uid://dvvdpf4fo4uq2" path="res://Button Sprites/playbutton.png" id="2_7vrkn"]
-[ext_resource type="Texture2D" uid="uid://crrs670pbtpyd" path="res://Button Sprites/PlayBtnHover.png" id="3_fu7sn"]
+[ext_resource type="Script" uid="uid://dq54488uetsha" path="res://Scripts/Buttons_controller.gd" id="1_1ehe0"]
+[ext_resource type="Texture2D" uid="uid://dvvdpf4fo4uq2" path="res://Button Sprites/playbutton.png" id="2_ce3w2"]
+[ext_resource type="Texture2D" uid="uid://crrs670pbtpyd" path="res://Button Sprites/PlayBtnHover.png" id="3_n45e2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_rhts7"]
 font_size = 50
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fu7sn"]
-texture = ExtResource("2_7vrkn")
+texture = ExtResource("2_ce3w2")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7vrkn"]
-texture = ExtResource("3_fu7sn")
+texture = ExtResource("3_n45e2")
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -20,7 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_06t4h")
+script = ExtResource("1_1ehe0")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
