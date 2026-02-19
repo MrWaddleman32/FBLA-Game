@@ -1,6 +1,10 @@
 [gd_scene load_steps=23 format=3 uid="uid://8ymqykvl3ls0"]
 
+<<<<<<< HEAD
 [ext_resource type="Script" path="res://player.gd" id="1_iwpo4"]
+=======
+[ext_resource type="Script" uid="uid://dxjmwdlj5dcrl" path="res://player.gd" id="1_iwpo4"]
+>>>>>>> parent of da26a9d (Organized it better)
 [ext_resource type="ArrayMesh" uid="uid://dyp04eqo7q7md" path="res://Models/PlayerModels/CharacterSprite2.vox.obj" id="2_fb3t6"]
 [ext_resource type="ArrayMesh" uid="uid://budhl2oqmvuci" path="res://Models/PlayerModels/CharacterSpriteIdle.vox.obj" id="3_c7tqt"]
 [ext_resource type="ArrayMesh" uid="uid://c7rgtjqnbgawt" path="res://Models/PlayerModels/CharacterSprite1.vox.obj" id="3_vd578"]

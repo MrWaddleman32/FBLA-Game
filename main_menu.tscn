@@ -6,6 +6,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://bdrndwb21pow6"]
 
 [ext_resource type="Script" uid="uid://dq54488uetsha" path="res://Buttons_controller.gd" id="1_06t4h"]
+<<<<<<< HEAD
+>>>>>>> parent of da26a9d (Organized it better)
+=======
 >>>>>>> parent of da26a9d (Organized it better)
 [ext_resource type="Texture2D" uid="uid://dvvdpf4fo4uq2" path="res://Button Sprites/playbutton.png" id="2_7vrkn"]
 [ext_resource type="Texture2D" uid="uid://crrs670pbtpyd" path="res://Button Sprites/PlayBtnHover.png" id="3_fu7sn"]

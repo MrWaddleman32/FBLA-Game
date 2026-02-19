@@ -6,6 +6,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://dprq1y0lanhkc"]
 
 [ext_resource type="PackedScene" uid="uid://cu55pejndo8j3" path="res://character_body_3d.tscn" id="1_kmu22"]
+<<<<<<< HEAD
+>>>>>>> parent of da26a9d (Organized it better)
+=======
 >>>>>>> parent of da26a9d (Organized it better)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4ov6g"]
