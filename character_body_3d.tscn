@@ -1,0 +1,154 @@
+[gd_scene load_steps=23 format=3 uid="uid://bfujfxv6s1yn0"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_iwpo4"]
+[ext_resource type="ArrayMesh" uid="uid://dyp04eqo7q7md" path="res://Models/PlayerModels/CharacterSprite2.vox.obj" id="2_fb3t6"]
+[ext_resource type="ArrayMesh" uid="uid://budhl2oqmvuci" path="res://Models/PlayerModels/CharacterSpriteIdle.vox.obj" id="3_c7tqt"]
+[ext_resource type="ArrayMesh" uid="uid://c7rgtjqnbgawt" path="res://Models/PlayerModels/CharacterSprite1.vox.obj" id="3_vd578"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fb3t6"]
+size = Vector3(0.8642273, 1.5095196, 0.26927948)
+
+[sub_resource type="Gradient" id="Gradient_iwpo4"]
+colors = PackedColorArray(0.5409905, 0.5409905, 0.5409905, 1, 0.61745477, 0.61745477, 0.6174547, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fb3t6"]
+gradient = SubResource("Gradient_iwpo4")
+
+[sub_resource type="Curve" id="Curve_vd578"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.4015152, 1), 0.0, 0.0, 0, 0, Vector2(0.49242425, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_c7tqt"]
+curve = SubResource("Curve_vd578")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_nl27k"]
+initial_velocity_min = 0.5
+initial_velocity_max = 2.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_c7tqt")
+color = Color(0.6156863, 0.6156863, 0.627451, 1)
+color_ramp = SubResource("GradientTexture1D_fb3t6")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c7tqt"]
+albedo_color = Color(0.36094865, 0.3609487, 0.36094847, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_obynr"]
+material = SubResource("StandardMaterial3D_c7tqt")
+size = Vector2(0.2, 0.2)
+
+[sub_resource type="Animation" id="Animation_fb3t6"]
+resource_name = "Idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:mesh")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_c7tqt")]
+}
+
+[sub_resource type="Animation" id="Animation_nl27k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:mesh")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_fb3t6")]
+}
+
+[sub_resource type="Animation" id="Animation_c7tqt"]
+resource_name = "Walk"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:mesh")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_fb3t6"), ExtResource("3_vd578"), ExtResource("2_fb3t6"), ExtResource("3_vd578"), ExtResource("2_fb3t6"), ExtResource("3_vd578")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vd578"]
+_data = {
+&"Idle": SubResource("Animation_fb3t6"),
+&"RESET": SubResource("Animation_nl27k"),
+&"Walk": SubResource("Animation_c7tqt")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vd578"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c7tqt"]
+animation = &"Walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_nl27k"]
+advance_mode = 2
+advance_condition = &"is_moving"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_obynr"]
+advance_mode = 2
+advance_condition = &"is_idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jvo56"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_1igb4"]
+states/Idle/node = SubResource("AnimationNodeAnimation_vd578")
+states/Idle/position = Vector2(319.26025, 47.5)
+states/Start/position = Vector2(202, 100.125)
+states/Walk/node = SubResource("AnimationNodeAnimation_c7tqt")
+states/Walk/position = Vector2(460.26025, 82)
+transitions = ["Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_nl27k"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_obynr"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_jvo56")]
+graph_offset = Vector2(56.26024, 0)
+
+[node name="CharacterBody3D" type="CharacterBody3D" node_paths=PackedStringArray("camera_pivot", "camera")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+script = ExtResource("1_iwpo4")
+camera_pivot = NodePath("CameraPivot")
+camera = NodePath("CameraPivot/Camera3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.057807818, 0.7882994, 0.14096642)
+shape = SubResource("BoxShape3D_fb3t6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("2_fb3t6")
+
+[node name="DustTrail" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.046450734, -0.30647796, -0.11847496)
+emitting = false
+speed_scale = 3.81
+process_material = SubResource("ParticleProcessMaterial_nl27k")
+draw_pass_1 = SubResource("QuadMesh_obynr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_vd578")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_1igb4")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/is_idle = false
+parameters/conditions/is_moving = false
+
+[node name="CameraPivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.98795986, 0.1547104, 0, -0.1547104, 0.98795986, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+transform = Transform3D(2, 0, 0, 0, 1.9318517, 0.51763815, 0, -0.51763815, 1.9318516, 0, 2, 6)
+current = true
