@@ -1,9 +1,16 @@
+<<<<<<< HEAD
 [gd_scene load_steps=12 format=4 uid="uid://cwavfj5t1adpa"]
 
+=======
+[gd_scene load_steps=9 format=3 uid="uid://23bq0okq8r64"]
+
+[ext_resource type="ArrayMesh" uid="uid://c6vni0sx2j080" path="res://Models/TileModels/Grass_Block.vox.obj" id="1_7h0kd"]
+>>>>>>> parent of da26a9d (Organized it better)
 [ext_resource type="ArrayMesh" uid="uid://c0sq6rwa4u710" path="res://Models/TileModels/Cobblestone.vox.obj" id="2_7ivye"]
 [ext_resource type="ArrayMesh" uid="uid://rsq6mmjqbgpy" path="res://Models/TileModels/Planks.vox.obj" id="3_vra4g"]
 [ext_resource type="ArrayMesh" uid="uid://dm3oybieek5mq" path="res://Models/TileModels/Tree_Log.vox.obj" id="4_xlp04"]
 
+<<<<<<< HEAD
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_d6bvg"]
 load_path = "res://.godot/imported/Grass_Block.vox.png-842a38809bd59ac172e6382adb4e7c7b.bptc.ctex"
 
@@ -44,6 +51,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_6qyfw")
 
+=======
+>>>>>>> parent of da26a9d (Organized it better)
 [sub_resource type="BoxShape3D" id="BoxShape3D_7ivye"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vra4g"]
@@ -56,7 +65,11 @@ shadow_mesh = SubResource("ArrayMesh_6qyfw")
 
 [node name="GrassBlock" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.638629, 0.043001354, -2.3841858e-07)
+<<<<<<< HEAD
 mesh = SubResource("ArrayMesh_7ivye")
+=======
+mesh = ExtResource("1_7h0kd")
+>>>>>>> parent of da26a9d (Organized it better)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="GrassBlock"]
 

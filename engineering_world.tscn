@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 [gd_scene load_steps=7 format=3 uid="uid://bb87umwehyk5u"]
 
 [ext_resource type="PackedScene" uid="uid://bfujfxv6s1yn0" path="res://character_body_3d.tscn" id="1_kmu22"]
+=======
+[gd_scene load_steps=7 format=3 uid="uid://dprq1y0lanhkc"]
+
+[ext_resource type="PackedScene" uid="uid://cu55pejndo8j3" path="res://character_body_3d.tscn" id="1_kmu22"]
+>>>>>>> parent of da26a9d (Organized it better)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4ov6g"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
