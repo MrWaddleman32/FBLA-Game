@@ -6,7 +6,7 @@
 [ext_resource type="ArrayMesh" uid="uid://c7rgtjqnbgawt" path="res://Models/PlayerModels/CharacterSprite1.vox.obj" id="3_vd578"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fb3t6"]
-size = Vector3(0.8642273, 1.5095196, 0.26927948)
+size = Vector3(0.7846527, 1.5095196, 0.96673393)
 
 [sub_resource type="Gradient" id="Gradient_iwpo4"]
 colors = PackedColorArray(0.5409905, 0.5409905, 0.5409905, 1, 0.61745477, 0.61745477, 0.6174547, 0)
@@ -122,7 +122,7 @@ camera_pivot = NodePath("CameraPivot")
 camera = NodePath("CameraPivot/Camera3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.057807818, 0.7882994, 0.14096642)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.018020526, 0.7882994, 0.07459164)
 shape = SubResource("BoxShape3D_fb3t6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

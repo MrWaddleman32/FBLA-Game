@@ -30,6 +30,7 @@ var respawn_position: Vector3 = Vector3(0, 1, 0)
 # Internal camera rotation
 var cam_yaw: float = 0.0
 var cam_pitch: float = deg_to_rad(-20)
+var can_move = true
 
 # -----------------------
 # Input (mouse rotation removed)
@@ -99,8 +100,9 @@ func _physics_process(delta: float) -> void:
 	# -----------------------
 	# Apply movement
 	# -----------------------
-	velocity.x = direction.x * SPEED
-	velocity.z = direction.z * SPEED
+	if can_move:
+		velocity.x = direction.x * SPEED
+		velocity.z = direction.z * SPEED
 
 	if not is_on_floor():
 		velocity.y -= gravity * delta
