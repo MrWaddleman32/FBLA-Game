@@ -54,7 +54,7 @@ func _physics_process(delta: float) -> void:
 	if camera_pivot and camera:
 		var cam_input: Vector2 = Vector2(
 			Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
-			Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+			0
 		)
 
 		# Update yaw and pitch
