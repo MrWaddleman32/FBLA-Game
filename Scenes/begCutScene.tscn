@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://btkeb1s7j4dh8"]
+[gd_scene load_steps=12 format=3 uid="uid://btkeb1s7j4dh8"]
 
 [ext_resource type="Script" uid="uid://0wbxgel4j0ey" path="res://beg_cut_scene.gd" id="1_bx7ib"]
 [ext_resource type="MeshLibrary" uid="uid://cfsjkwq0d6ag" path="res://Models/Tilemesh/TilesFixed2.tres" id="2_m0wp2"]
 [ext_resource type="PackedScene" uid="uid://cu55pejndo8j3" path="res://Scenes/character_body_3d.tscn" id="3_1gcf4"]
+[ext_resource type="PackedScene" uid="uid://bxnpi315xnmmk" path="res://Scenes/OldMan.tscn" id="4_m0wp2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xa28p"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -16,6 +17,16 @@ background_mode = 2
 sky = SubResource("Sky_t472g")
 tonemap_mode = 2
 glow_enabled = true
+
+[sub_resource type="Animation" id="Animation_bx7ib"]
+resource_name = "Cutscene 1"
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array()
 
 [sub_resource type="Animation" id="Animation_t472g"]
 length = 0.001
@@ -72,9 +83,6 @@ tracks/1/keys = {
 "values": [Vector3(0, 0, 0), Vector3(0, -0.6527531, 0), Vector3(0, -2.1223204, 0), Vector3(0, -1.6516575, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_bx7ib"]
-resource_name = "Cutscene 1"
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_t472g"]
 _data = {
 &"Cutscene 1": SubResource("Animation_bx7ib"),
@@ -112,10 +120,12 @@ libraries = {
 &"": SubResource("AnimationLibrary_t472g")
 }
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, 11)
-light_energy = 3.585
+[node name="CharacterBody3D" parent="." instance=ExtResource("4_m0wp2")]
+transform = Transform3D(-2.6887064, 0, 0.08341589, 0, 2.69, 0, -0.08341589, 0, -2.6887064, 4.676557, 1, 13.196508)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 4, 10)
-light_energy = 3.585
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.1924881e-08, 1, 0, -1, 1.1924881e-08, 4.0292416, 5.1631775, 8.887555)
+light_energy = 8.57
+light_specular = 0.0
+spot_range = 174.783
+spot_angle = 76.78485
