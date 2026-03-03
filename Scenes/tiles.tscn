@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://23bq0okq8r64"]
+[gd_scene load_steps=19 format=3 uid="uid://23bq0okq8r64"]
 
 [ext_resource type="ArrayMesh" uid="uid://c6vni0sx2j080" path="res://Models/TileModels/Grass_Block.vox.obj" id="1_7h0kd"]
 [ext_resource type="ArrayMesh" uid="uid://c0sq6rwa4u710" path="res://Models/TileModels/Cobblestone.vox.obj" id="2_7ivye"]
@@ -8,6 +8,7 @@
 [ext_resource type="ArrayMesh" uid="uid://bksq1nlnv4bgw" path="res://Models/TileModels/Red_Steel_Beam.vox.obj" id="6_341ea"]
 [ext_resource type="ArrayMesh" uid="uid://bxove0j4lf0hq" path="res://Models/TileModels/Steel_Beam.vox.obj" id="6_srh3t"]
 [ext_resource type="ArrayMesh" uid="uid://c4kiwl5kw0sv4" path="res://Models/TileModels/White_Fence.vox.obj" id="7_7osof"]
+[ext_resource type="ArrayMesh" uid="uid://b54yinxiw0y8f" path="res://Models/TileModels/Jackhammer.vox.obj" id="9_gv4we"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_rnsht"]
 points = PackedVector3Array(0.5, 1, 0.5, 0.5, 0, 0.5, 0.5, 1, -0.5, -0.5, 1, 0.5, 0.5, 0, -0.5, -0.5, 0, 0.5, -0.5, 1, -0.5, -0.5, 0, -0.5)
@@ -32,6 +33,9 @@ points = PackedVector3Array(1.6, 1.399863, 0.1, 1.6, 0, 0.1, 1.6, 1.399863, -0.1
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gjn3x"]
 points = PackedVector3Array(0.5, 1, 0.5, 0.5, 0, 0.5, 0.5, 1, -0.5, -0.5, 1, 0.5, 0.5, 0, -0.5, -0.5, 0, 0.5, -0.5, 1, -0.5, -0.5, 0, -0.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fyirt"]
+points = PackedVector3Array(-0.875, 1.3124633, -0.12502447, -0.06260401, 0, -0.062548935, -0.875, 1.3124633, 0.124951065, -0.875, 1.3748654, -0.12502447, -0.18750608, 1.3748654, -0.375, -0.06260401, 0.24997552, -0.12502447, 0.12492663, 0, -0.062548935, -0.06260401, 0, 0.062475532, -0.875, 1.3748654, 0.124951065, -0.18750608, 1.3748654, 0.375, -0.875, 1.6248409, -0.062548935, -0.7500979, 1.6248409, -0.12502447, -0.18750608, 1.6248409, -0.375, -0.06260401, 1.3124633, -0.375, 0.12492663, 0.24997552, -0.12502447, 0.12492663, 0, 0.062475532, 0.2498287, 1.3748654, -0.375, 0.9375, 1.3124633, -0.12502447, -0.06260401, 0.24997552, 0.124951065, -0.18750608, 1.6248409, 0.375, -0.7500979, 1.6248409, 0.124951065, -0.875, 1.6248409, 0.062475532, -0.06260401, 1.3124633, 0.375, -0.12505502, 1.8749999, -0.12502447, -0.06260401, 1.7498286, -0.31252447, 0.2498287, 1.6248409, -0.375, 0.12492663, 1.3124633, -0.375, 0.12492663, 0.24997552, 0.124951065, 0.9375, 1.3124633, 0.124951065, 0.2498287, 1.3748654, 0.375, 0.9375, 1.3748654, -0.12502447, 0.2498287, 1.6248409, 0.375, -0.06260401, 1.7498286, 0.31245106, -0.12505502, 1.8749999, 0.124951065, 0.12492663, 1.3124633, 0.375, 0.18737769, 1.8749999, -0.12502447, 0.12492663, 1.7498286, -0.31252447, 0.8124205, 1.6248409, -0.12502447, 0.9375, 1.3748654, 0.124951065, 0.9375, 1.6248409, -0.062548935, 0.8124205, 1.6248409, 0.124951065, 0.12492663, 1.7498286, 0.31245106, 0.18737769, 1.8749999, 0.124951065, 0.9375, 1.6248409, 0.062475532)
 
 [node name="Node3D" type="Node3D"]
 
@@ -106,3 +110,12 @@ mesh = ExtResource("6_341ea")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RedSteelBeam_vox/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_gjn3x")
+
+[node name="Jackhammer_vox" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+mesh = ExtResource("9_gv4we")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Jackhammer_vox"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Jackhammer_vox/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_fyirt")
