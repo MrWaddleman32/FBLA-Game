@@ -1,18 +1,12 @@
-[gd_scene load_steps=23 format=3 uid="uid://cu55pejndo8j3"]
+[gd_scene load_steps=21 format=3 uid="uid://cu55pejndo8j3"]
 
-[ext_resource type="Script" uid="uid://dxjmwdlj5dcrl" path="res://player.gd" id="1_iwpo4"]
+[ext_resource type="Script" uid="uid://dxjmwdlj5dcrl" path="res://Scripts/player.gd" id="1_iwpo4"]
 [ext_resource type="ArrayMesh" uid="uid://dyp04eqo7q7md" path="res://Models/PlayerModels/CharacterSprite2.vox.obj" id="2_fb3t6"]
 [ext_resource type="ArrayMesh" uid="uid://budhl2oqmvuci" path="res://Models/PlayerModels/CharacterSpriteIdle.vox.obj" id="3_c7tqt"]
 [ext_resource type="ArrayMesh" uid="uid://c7rgtjqnbgawt" path="res://Models/PlayerModels/CharacterSprite1.vox.obj" id="3_vd578"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fb3t6"]
 size = Vector3(0.7846527, 1.5095196, 0.96673393)
-
-[sub_resource type="Gradient" id="Gradient_iwpo4"]
-colors = PackedColorArray(0.5409905, 0.5409905, 0.5409905, 1, 0.61745477, 0.61745477, 0.6174547, 0)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_fb3t6"]
-gradient = SubResource("Gradient_iwpo4")
 
 [sub_resource type="Curve" id="Curve_vd578"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.4015152, 1), 0.0, 0.0, 0, 0, Vector2(0.49242425, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -26,15 +20,13 @@ initial_velocity_min = 0.5
 initial_velocity_max = 2.0
 gravity = Vector3(0, 0, 0)
 scale_curve = SubResource("CurveTexture_c7tqt")
-color = Color(0.6156863, 0.6156863, 0.627451, 1)
-color_ramp = SubResource("GradientTexture1D_fb3t6")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c7tqt"]
-albedo_color = Color(0.36094865, 0.3609487, 0.36094847, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fa3hm"]
+albedo_color = Color(0.28485027, 0.28485027, 0.28485027, 1)
 
-[sub_resource type="QuadMesh" id="QuadMesh_obynr"]
-material = SubResource("StandardMaterial3D_c7tqt")
-size = Vector2(0.2, 0.2)
+[sub_resource type="BoxMesh" id="BoxMesh_fa3hm"]
+material = SubResource("StandardMaterial3D_fa3hm")
+size = Vector3(0.2, 0.2, 0.2)
 
 [sub_resource type="Animation" id="Animation_fb3t6"]
 resource_name = "Idle"
@@ -129,11 +121,11 @@ shape = SubResource("BoxShape3D_fb3t6")
 mesh = ExtResource("2_fb3t6")
 
 [node name="DustTrail" type="GPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.046450734, -0.30647796, -0.11847496)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.046, 0.039, -0.238)
 emitting = false
 speed_scale = 3.81
 process_material = SubResource("ParticleProcessMaterial_nl27k")
-draw_pass_1 = SubResource("QuadMesh_obynr")
+draw_pass_1 = SubResource("BoxMesh_fa3hm")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

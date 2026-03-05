@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://bxnpi315xnmmk"]
 
-[ext_resource type="Script" uid="uid://dy2pledj53vm7" path="res://old_man.gd" id="1_b01t7"]
+[ext_resource type="Script" uid="uid://dy2pledj53vm7" path="res://Scripts/old_man.gd" id="1_b01t7"]
 [ext_resource type="ArrayMesh" uid="uid://bv7iwnck3dpkq" path="res://Models/EntityModels/OldManIdle.vox.obj" id="1_jjy1p"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_jjy1p"]
-size = Vector3(0.7248535, 0.851387, 0.39315796)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6nx7i"]
+points = PackedVector3Array(-0.3, 0.59994125, 0.049995102, -0.3, 0.59994125, 0.45, -0.3, 0.6999315, 0.049995102, -0.25001958, 0.24997553, 0, -0.25001958, 0, 0.24997552, -0.20003916, 0.5499462, 0.45, -0.3, 0.6999315, 0.45, -0.25001958, 0, 0.29997063, -0.050039157, 0.24997553, 0.39996082, -0.25001958, 0.75, 0.049995102, -0.25001958, 0.6999315, 0, -0.15, 0.14998531, 0, -0.15, 0, 0.049995102, 0.19998041, 0.5499462, 0.45, -0.25001958, 0.75, 0.45, -0.15, 0, 0.29997063, 0.049980402, 0.24997553, 0.39996082, 0.24996084, 0.75, 0.049995102, 0.24996084, 0.6999315, 0, 0.24996084, 0.14998531, 0, 0.15, 0, 0.049995102, 0.3, 0.59994125, 0.45, 0.24996084, 0.75, 0.45, 0.15, 0, 0.19998041, 0.19998041, 0.34996575, 0.39996082, 0.3, 0.6999315, 0.049995102, 0.24996084, 0.14998531, 0.099990204, 0.3, 0.59994125, 0.049995102, 0.3, 0.6999315, 0.45, 0.24996084, 0.39996085, 0.39996082)
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
 script = ExtResource("1_b01t7")
@@ -13,5 +13,4 @@ script = ExtResource("1_b01t7")
 mesh = ExtResource("1_jjy1p")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008666992, 0.41459775, 0.22795105)
-shape = SubResource("BoxShape3D_jjy1p")
+shape = SubResource("ConvexPolygonShape3D_6nx7i")

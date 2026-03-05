@@ -1,6 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://btkeb1s7j4dh8"]
+[gd_scene load_steps=8 format=3 uid="uid://btkeb1s7j4dh8"]
 
-[ext_resource type="Script" uid="uid://0wbxgel4j0ey" path="res://beg_cut_scene.gd" id="1_bx7ib"]
+[ext_resource type="Script" uid="uid://0wbxgel4j0ey" path="res://Scripts/beg_cut_scene.gd" id="1_bx7ib"]
 [ext_resource type="MeshLibrary" uid="uid://cfsjkwq0d6ag" path="res://Models/Tilemesh/TilesFixed2.tres" id="2_m0wp2"]
 [ext_resource type="PackedScene" uid="uid://cu55pejndo8j3" path="res://Scenes/character_body_3d.tscn" id="3_1gcf4"]
 [ext_resource type="PackedScene" uid="uid://bxnpi315xnmmk" path="res://Scenes/OldMan.tscn" id="4_m0wp2"]
@@ -17,78 +17,6 @@ background_mode = 2
 sky = SubResource("Sky_t472g")
 tonemap_mode = 2
 glow_enabled = true
-
-[sub_resource type="Animation" id="Animation_bx7ib"]
-resource_name = "Cutscene 1"
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array()
-
-[sub_resource type="Animation" id="Animation_t472g"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-0.7185998, 3.8008947, 9.598739)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Camera3D:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_xa28p"]
-resource_name = "cutscene"
-length = 10.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3.04, 6, 9.07),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(-0.7185998, 3.8008947, 9.598739), Vector3(-0.699, 2.421, 7.739), Vector3(1.161, 2.421, 6.509), Vector3(2.580206, 2.421, 7.917143)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Camera3D:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 3.04, 6, 9.07),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, -0.6527531, 0), Vector3(0, -2.1223204, 0), Vector3(0, -1.6516575, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_t472g"]
-_data = {
-&"Cutscene 1": SubResource("Animation_bx7ib"),
-&"RESET": SubResource("Animation_t472g"),
-&"cutscene": SubResource("Animation_xa28p")
-}
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_bx7ib")
@@ -109,19 +37,14 @@ data = {
 metadata/_editor_floor_ = Vector3(-3, 0, 2)
 
 [node name="CharacterBody3D2" parent="." instance=ExtResource("3_1gcf4")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4.7717147, 1.653239, 7.3637304)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4.7717147, 1.0470177, 7.3637304)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7185998, 3.8008947, 9.598739)
+transform = Transform3D(-0.8979968, 0, -0.440002, 0, 1, 0, 0.440002, 0, -0.8979968, 1.5909584, 2.9679806, 5.819938)
 current = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_t472g")
-}
-
 [node name="CharacterBody3D" parent="." instance=ExtResource("4_m0wp2")]
-transform = Transform3D(-2.6887064, 0, 0.08341589, 0, 2.69, 0, -0.08341589, 0, -2.6887064, 4.676557, 1, 13.196508)
+transform = Transform3D(-1.9440647, 0, 0.060313717, 0, 1.945, 0, -0.060313717, 0, -1.9440647, 3.696398, 1, 13.196508)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1.1924881e-08, 1, 0, -1, 1.1924881e-08, 4.0292416, 5.1631775, 8.887555)
