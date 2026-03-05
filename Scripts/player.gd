@@ -139,11 +139,16 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		call_deferred("_teleport_to_engineering")
 
 func _teleport_to_engineering():
-	get_tree().change_scene_to_file("res://engineering_world.tscn")
+	get_tree().change_scene_to_file("res://Scenes/engineering_world.tscn")
 
 func _teleport_to_main():
-	get_tree().change_scene_to_file("res://floor.tscn")
+	get_tree().change_scene_to_file("res://Scenes/begCutScene.tscn")
 
 func _on_tp_to_main_body_entered(body: Node3D) -> void:
 	if body == self:
 		call_deferred("_teleport_to_main")
+
+
+func tp_to_eg(body: Node3D) -> void:
+	if body == self:
+		call_deferred("_teleport_to_engineering")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://btkeb1s7j4dh8"]
+[gd_scene load_steps=10 format=3 uid="uid://btkeb1s7j4dh8"]
 
 [ext_resource type="Script" uid="uid://0wbxgel4j0ey" path="res://Scripts/beg_cut_scene.gd" id="1_bx7ib"]
 [ext_resource type="MeshLibrary" uid="uid://cfsjkwq0d6ag" path="res://Models/Tilemesh/TilesFixed2.tres" id="2_m0wp2"]
@@ -17,6 +17,11 @@ background_mode = 2
 sky = SubResource("Sky_t472g")
 tonemap_mode = 2
 glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m0wp2"]
+size = Vector3(1.857666, 1.6512451, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1gcf4"]
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_bx7ib")
@@ -52,3 +57,15 @@ light_energy = 8.57
 light_specular = 0.0
 spot_range = 174.783
 spot_angle = 76.78485
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1282959, 2.3256226, -9)
+shape = SubResource("BoxShape3D_m0wp2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 0.05397421, -0.9985423, 0, 0.9985423, 0.05397421, 0, 2, -9)
+mesh = SubResource("PlaneMesh_1gcf4")
+
+[connection signal="body_entered" from="Area3D" to="CharacterBody3D2" method="tp_to_eg"]

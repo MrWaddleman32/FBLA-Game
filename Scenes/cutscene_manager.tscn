@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://bugcgq11a31kr"]
 
 [ext_resource type="Texture2D" uid="uid://ctj6nexb0sv5v" path="res://Sprites/Screenshot_2026-02-19_at_11.31.03_AM-removebg-preview.png" id="1_ef3if"]
-[ext_resource type="Script" uid="uid://cbhwa472om3k2" path="res://Scenes/cutscene_manager.gd" id="1_y06b0"]
+[ext_resource type="Script" uid="uid://cbhwa472om3k2" path="res://Scripts/cutscene_manager.gd" id="1_y06b0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_y06b0"]
-font_size = 36
+font_size = 86
 
 [node name="Cutscene Manager" type="Node3D"]
 script = ExtResource("1_y06b0")
@@ -12,16 +12,18 @@ script = ExtResource("1_y06b0")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -578.0
-offset_top = -138.0
-offset_right = 532.0
+anchors_preset = -1
+anchor_left = 0.048
+anchor_top = 0.716
+anchor_right = 0.9480001
+anchor_bottom = 0.90800005
+offset_left = 0.55999756
+offset_top = 0.33996582
+offset_right = 0.5599365
+offset_bottom = 0.099975586
 grow_horizontal = 2
 grow_vertical = 0
+size_flags_horizontal = 4
 size_flags_vertical = 8
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/PanelContainer"]
