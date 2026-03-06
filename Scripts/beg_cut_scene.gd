@@ -4,6 +4,7 @@ extends Node3D
 @onready var animationPlayer: AnimationPlayer = get_node_or_null("AnimationPlayer")
 @onready var player: CharacterBody3D = $CharacterBody3D2
 @onready var old_man: CharacterBody3D = $CharacterBody3D
+const OLD_MAN_IDLE_PIXEL_256_TRANSPARENT = preload("uid://bju1qnrhtrtgs")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

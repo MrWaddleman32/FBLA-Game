@@ -25,3 +25,7 @@ func turn_off_UI():
 
 func turn_on_UI():
 	canvas_layer.visible = true
+	
+func wait(seconds):
+	return get_tree().create_timer(seconds).timeout
+	

@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dprq1y0lanhkc"]
+[gd_scene load_steps=14 format=3 uid="uid://dprq1y0lanhkc"]
 
+[ext_resource type="Script" uid="uid://dersj2354cags" path="res://Scenes/engineering_world.gd" id="1_acmio"]
 [ext_resource type="PackedScene" uid="uid://cu55pejndo8j3" path="res://Scenes/character_body_3d.tscn" id="1_kmu22"]
 [ext_resource type="MeshLibrary" uid="uid://bv5j5uxg2n534" path="res://Models/Tilemesh/WithJH&DP.tres" id="2_elmq6"]
+[ext_resource type="PackedScene" uid="uid://bxnpi315xnmmk" path="res://Scenes/OldMan.tscn" id="3_ihxk4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4ov6g"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -21,7 +23,52 @@ size = Vector3(1.857666, 1.6512451, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_4ov6g"]
 
+[sub_resource type="Curve3D" id="Curve3D_acmio"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.03250584, 0, 2.375716, 0, 0, 0, 0, 0, 0, 0.015930954, 0, 5.2089615, 0, 0, 0, 0, 0, 0, -0.12887007, 0, 7.905067, 0, 0, 0, 0, 0, 0, -0.74750745, 0, 12.000989, 0, 0, 0, 0, 0, 0, -2.528421, 0, 15.174378, 0, 0, 0, 0, 0, 0, -3.3760467, 0, 16.819769),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
+}
+point_count = 6
+
+[sub_resource type="Animation" id="Animation_acmio"]
+resource_name = "Follow Path"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 15.165877]
+}
+
+[sub_resource type="Animation" id="Animation_qib6p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cyhdl"]
+_data = {
+&"Follow Path": SubResource("Animation_acmio"),
+&"RESET": SubResource("Animation_qib6p")
+}
+
 [node name="Engineering World" type="Node3D"]
+script = ExtResource("1_acmio")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ie1e8")
@@ -30,11 +77,8 @@ environment = SubResource("Environment_ie1e8")
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 
-[node name="CharacterBody3D" parent="." instance=ExtResource("1_kmu22")]
+[node name="Player" parent="." instance=ExtResource("1_kmu22")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.40231764, 1.4127656, 0.10697675)
-
-[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
-transform = Transform3D(1.8795412, -0.005784514, -0.041132312, 0.027423274, 1.5710785, 1.0321629, 0.03119762, -1.0325111, 1.5707793, 0.22000003, 3.5610003, 5.0930004)
 
 [node name="TPToMain" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7471918, 0, -12.39326)
@@ -55,4 +99,19 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
-[connection signal="body_entered" from="TPToMain" to="CharacterBody3D" method="_on_tp_to_main_body_entered"]
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+curve = SubResource("Curve3D_acmio")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.9998539, 0, -0.017093454, 0, 1, 0, 0.017093454, 0, -0.9998539, -0.03250584, 0, 2.375716)
+
+[node name="Teacher" parent="Path3D/PathFollow3D" instance=ExtResource("3_ihxk4")]
+transform = Transform3D(-1.2098233, 0, 0.02068308, 0, 1.21, 0, -0.02068308, 0, -1.2098233, -0.05601683, 0, 1.3749592)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Path3D/PathFollow3D"]
+libraries = {
+&"": SubResource("AnimationLibrary_cyhdl")
+}
+
+[connection signal="body_entered" from="TPToMain" to="Player" method="_on_tp_to_main_body_entered"]

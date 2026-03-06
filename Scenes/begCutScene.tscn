@@ -49,7 +49,7 @@ transform = Transform3D(-0.8979968, 0, -0.440002, 0, 1, 0, 0.440002, 0, -0.89799
 current = true
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("4_m0wp2")]
-transform = Transform3D(-1.9440647, 0, 0.060313717, 0, 1.945, 0, -0.060313717, 0, -1.9440647, 3.696398, 1, 13.196508)
+transform = Transform3D(-1.594233, 0, 0.049460348, 0, 1.595, 0, -0.049460348, 0, -1.594233, 3.696398, 1, 13.196508)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1.1924881e-08, 1, 0, -1, 1.1924881e-08, 4.0292416, 5.1631775, 8.887555)
