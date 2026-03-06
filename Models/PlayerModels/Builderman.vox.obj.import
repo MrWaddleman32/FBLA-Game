@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://s61tl2oi2eyt"
+path="res://.godot/imported/Builderman.vox.obj-413412ae3ca80b65d28a9fe2872d783f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Builderman.vox.obj-413412ae3ca80b65d28a9fe2872d783f.mesh"]
+
+source_file="res://Models/PlayerModels/Builderman.vox.obj"
+dest_files=["res://.godot/imported/Builderman.vox.obj-413412ae3ca80b65d28a9fe2872d783f.mesh", "res://.godot/imported/Builderman.vox.obj-413412ae3ca80b65d28a9fe2872d783f.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
