@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cveo6asndwl0b"
+path="res://.godot/imported/Medic_Walk2.vox.obj-07536eca13a01313f5e2edeb369afde1.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Medic_Walk2.vox.obj-07536eca13a01313f5e2edeb369afde1.mesh"]
+
+source_file="res://Models/TileModels/Medic_Walk2.vox.obj"
+dest_files=["res://.godot/imported/Medic_Walk2.vox.obj-07536eca13a01313f5e2edeb369afde1.mesh", "res://.godot/imported/Medic_Walk2.vox.obj-07536eca13a01313f5e2edeb369afde1.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
