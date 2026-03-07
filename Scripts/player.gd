@@ -28,7 +28,7 @@ var respawn_position: Vector3 = Vector3(0, 1, 0)
 @export var camera_height: float = 2.0
 
 # Internal camera rotation
-var cam_yaw: float = 0.0
+var cam_yaw: float = deg_to_rad(180)
 var cam_pitch: float = deg_to_rad(-20)
 var can_move = true
 
