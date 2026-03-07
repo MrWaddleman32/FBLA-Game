@@ -1,0 +1,124 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsjt55joo4itg"]
+
+[ext_resource type="Script" uid="uid://bnbow6hh0nq7n" path="res://Scenes/inventory.gd" id="1_jbd0o"]
+[ext_resource type="Texture2D" uid="uid://eq45gf4lkm3b" path="res://Sprites/icon.svg" id="2_4v8qb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1pi3o"]
+
+[node name="Inventory" type="Node3D"]
+script = ExtResource("1_jbd0o")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+columns = 5
+
+[node name="Item1" type="TextureRect" parent="CanvasLayer/GridContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+texture = ExtResource("2_4v8qb")
+
+[node name="number" type="Label" parent="CanvasLayer/GridContainer/Item1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.77300006
+anchor_top = 0.82000005
+anchor_right = 0.99200004
+anchor_bottom = 0.984
+offset_left = 0.055992126
+offset_top = -1.9600067
+offset_right = 0.023994446
+offset_bottom = 0.04799652
+label_settings = SubResource("LabelSettings_1pi3o")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Item2" type="TextureRect" parent="CanvasLayer/GridContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+texture = ExtResource("2_4v8qb")
+
+[node name="number" type="Label" parent="CanvasLayer/GridContainer/Item2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.77300006
+anchor_top = 0.82000005
+anchor_right = 0.99200004
+anchor_bottom = 0.984
+offset_left = 0.055992126
+offset_top = -1.9600067
+offset_right = 0.023994446
+offset_bottom = 0.04799652
+label_settings = SubResource("LabelSettings_1pi3o")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Item3" type="TextureRect" parent="CanvasLayer/GridContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+texture = ExtResource("2_4v8qb")
+
+[node name="number" type="Label" parent="CanvasLayer/GridContainer/Item3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.77300006
+anchor_top = 0.82000005
+anchor_right = 0.99200004
+anchor_bottom = 0.984
+offset_left = 0.055992126
+offset_top = -1.9600067
+offset_right = 0.023994446
+offset_bottom = 0.04799652
+label_settings = SubResource("LabelSettings_1pi3o")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Item4" type="TextureRect" parent="CanvasLayer/GridContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+texture = ExtResource("2_4v8qb")
+
+[node name="number" type="Label" parent="CanvasLayer/GridContainer/Item4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.77300006
+anchor_top = 0.82000005
+anchor_right = 0.99200004
+anchor_bottom = 0.984
+offset_left = 0.055992126
+offset_top = -1.9600067
+offset_right = 0.023994446
+offset_bottom = 0.04799652
+label_settings = SubResource("LabelSettings_1pi3o")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Item5" type="TextureRect" parent="CanvasLayer/GridContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+texture = ExtResource("2_4v8qb")
+
+[node name="number" type="Label" parent="CanvasLayer/GridContainer/Item5"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.77300006
+anchor_top = 0.82000005
+anchor_right = 0.99200004
+anchor_bottom = 0.984
+offset_left = 0.055992126
+offset_top = -1.9600067
+offset_right = 0.023994446
+offset_bottom = 0.04799652
+label_settings = SubResource("LabelSettings_1pi3o")
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqmu0p7yaxnsh"
-path.s3tc="res://.godot/imported/Builder_Walk2.vox.png-2151c7a64cc303a1c7e7275a6108b7ec.s3tc.ctex"
+uid="uid://cwxcoirw6mv5f"
+path.s3tc="res://.godot/imported/Chemicalman.vox.png-811f4d8ec14b2afbf2abc53a5c577ce7.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Models/TileModels/Builder_Walk2.vox.png"
-dest_files=["res://.godot/imported/Builder_Walk2.vox.png-2151c7a64cc303a1c7e7275a6108b7ec.s3tc.ctex"]
+source_file="res://Models/PlayerModels/Chemicalman.vox.png"
+dest_files=["res://.godot/imported/Chemicalman.vox.png-811f4d8ec14b2afbf2abc53a5c577ce7.s3tc.ctex"]
 
 [params]
 

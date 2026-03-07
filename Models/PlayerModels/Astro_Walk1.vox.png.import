@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqmu0p7yaxnsh"
-path.s3tc="res://.godot/imported/Builder_Walk2.vox.png-2151c7a64cc303a1c7e7275a6108b7ec.s3tc.ctex"
+uid="uid://bnsxkxc4wor5c"
+path.s3tc="res://.godot/imported/Astro_Walk1.vox.png-62be24f6452c5e9019ae8a0fa1e93c6c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Models/TileModels/Builder_Walk2.vox.png"
-dest_files=["res://.godot/imported/Builder_Walk2.vox.png-2151c7a64cc303a1c7e7275a6108b7ec.s3tc.ctex"]
+source_file="res://Models/PlayerModels/Astro_Walk1.vox.png"
+dest_files=["res://.godot/imported/Astro_Walk1.vox.png-62be24f6452c5e9019ae8a0fa1e93c6c.s3tc.ctex"]
 
 [params]
 

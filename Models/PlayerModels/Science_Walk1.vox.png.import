@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqmu0p7yaxnsh"
-path.s3tc="res://.godot/imported/Builder_Walk2.vox.png-2151c7a64cc303a1c7e7275a6108b7ec.s3tc.ctex"
+uid="uid://dg3smy2r7lsgm"
+path.s3tc="res://.godot/imported/Science_Walk1.vox.png-ecdb067def37f2d07301fba55535978f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Models/TileModels/Builder_Walk2.vox.png"
-dest_files=["res://.godot/imported/Builder_Walk2.vox.png-2151c7a64cc303a1c7e7275a6108b7ec.s3tc.ctex"]
+source_file="res://Models/PlayerModels/Science_Walk1.vox.png"
+dest_files=["res://.godot/imported/Science_Walk1.vox.png-ecdb067def37f2d07301fba55535978f.s3tc.ctex"]
 
 [params]
 
