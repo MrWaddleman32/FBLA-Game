@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://bugcgq11a31kr"]
 
-[ext_resource type="Texture2D" uid="uid://ctj6nexb0sv5v" path="res://Sprites/Screenshot_2026-02-19_at_11.31.03_AM-removebg-preview.png" id="1_ef3if"]
 [ext_resource type="Script" uid="uid://cbhwa472om3k2" path="res://Scripts/cutscene_manager.gd" id="1_y06b0"]
+[ext_resource type="Texture2D" uid="uid://bju1qnrhtrtgs" path="res://Sprites/OldManIdle_pixel_256_transparent.png" id="2_y06b0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_y06b0"]
-font_size = 86
+font_size = 80
 
 [node name="Cutscene Manager" type="Node3D"]
 script = ExtResource("1_y06b0")
@@ -25,13 +25,15 @@ grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 4
 size_flags_vertical = 8
+metadata/_edit_use_anchors_ = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/PanelContainer"]
+clip_contents = true
 layout_mode = 2
 
 [node name="sprite" type="TextureRect" parent="CanvasLayer/PanelContainer/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("1_ef3if")
+texture = ExtResource("2_y06b0")
 expand_mode = 3
 
 [node name="text" type="Label" parent="CanvasLayer/PanelContainer/HBoxContainer"]
@@ -43,3 +45,4 @@ text = "Hello"
 label_settings = SubResource("LabelSettings_y06b0")
 vertical_alignment = 1
 autowrap_mode = 3
+text_overrun_behavior = 2

@@ -11,7 +11,9 @@ var cutscene_played = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
 	ui_overlay_manager.turn_off_hint_text()
+	ui_overlay_manager.turn_off_instruction_text()
 	player.can_move = false
 	CutsceneManager.turn_off_UI()
 	await CutsceneManager.wait(2)
@@ -36,12 +38,13 @@ func engineering_cs_pt2(body: Node3D) -> void:
 	if cutscene_played:
 		return
 	if body == player:
-		second_cam.current = true
+		#second_cam.current = true
 		
+		cutscene_played = true
 		var dx = teacher.global_position.x - player.global_position.x
 		var dz = teacher.global_position.z - player.global_position.z
 		teacher.rotation.y = atan(dx/dz)
-		player.rotation.y = atan(dx/dz) + PI
+		#player.rotation.y = atan(dx/dz) + PI
 		
 		set_deferred("monitorable", false)
 		set_deferred("monitoring", false)
@@ -63,7 +66,6 @@ func engineering_cs_pt2(body: Node3D) -> void:
 		await CutsceneManager.wait(3)
 		ui_overlay_manager.turn_on_instruction_text()
 		ui_overlay_manager.change_instruction_text("Go collect some wood")
-		cutscene_played = true
 		CutsceneManager.turn_off_UI()
 		player.can_move = true
 		second_cam.current = false

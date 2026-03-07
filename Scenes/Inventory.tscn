@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bsjt55joo4itg"]
 
-[ext_resource type="Script" uid="uid://bnbow6hh0nq7n" path="res://Scenes/inventory.gd" id="1_jbd0o"]
+[ext_resource type="Script" uid="uid://bnbow6hh0nq7n" path="res://inventory.gd" id="1_jbd0o"]
 [ext_resource type="Texture2D" uid="uid://eq45gf4lkm3b" path="res://Sprites/icon.svg" id="2_4v8qb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1pi3o"]
