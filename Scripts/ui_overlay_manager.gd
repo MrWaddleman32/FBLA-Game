@@ -14,7 +14,7 @@ func turn_off_hint_text():
 	hint_text_panel.visible = false
 	
 func turn_on_instruction_text():
-	hint_text_panel.visible = true
+	instruction.visible = true
 	
 func turn_off_instruction_text():
 	instruction.visible = false

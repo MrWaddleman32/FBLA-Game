@@ -6,7 +6,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_y06b0"]
 font = ExtResource("3_hxere")
-font_size = 80
+font_size = 45
 
 [node name="Cutscene Manager" type="Node3D"]
 script = ExtResource("1_y06b0")

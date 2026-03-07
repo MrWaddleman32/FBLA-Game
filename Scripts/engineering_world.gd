@@ -8,10 +8,12 @@ const old_man_sprite = preload("uid://bju1qnrhtrtgs")
 @onready var CutScene_pt2: Area3D = $Area3D
 var cutscene_played = false
 @onready var second_cam: Camera3D = $Camera3D
+var in_wood_zone = false
+var in_plank_zone = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
+	await get_tree().process_frame
 	ui_overlay_manager.turn_off_hint_text()
 	ui_overlay_manager.turn_off_instruction_text()
 	player.can_move = false
@@ -31,23 +33,25 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	pass
+	if Input.is_action_pressed("jump"):
+		cutscene_played = true
+	if in_wood_zone and Input.is_action_just_pressed("pick_up_item"):
+		Inventory.add("Wood")
+	elif in_plank_zone and Input.is_action_just_pressed("pick_up_item"):
+		Inventory.add("Planks")
 
 
 func engineering_cs_pt2(body: Node3D) -> void:
 	if cutscene_played:
 		return
 	if body == player:
-		#second_cam.current = true
+		second_cam.current = true
 		
 		cutscene_played = true
 		var dx = teacher.global_position.x - player.global_position.x
 		var dz = teacher.global_position.z - player.global_position.z
 		teacher.rotation.y = atan(dx/dz)
-		#player.rotation.y = atan(dx/dz) + PI
 		
-		set_deferred("monitorable", false)
-		set_deferred("monitoring", false)
 		player.can_move = false
 		player.velocity = Vector3(0,0,0)
 		CutsceneManager.turn_on_UI()
@@ -72,5 +76,25 @@ func engineering_cs_pt2(body: Node3D) -> void:
 		player.rotation.y = 0
 
 
-func _on_wood_place_body_entered(body: Node3D) -> void:
-	ui_overlay_manager.visibility_changed_hint_text("Press E or Top Btn to pick up wood")
+func _on_wood_place_body_entered(_body: Node3D) -> void:
+	if cutscene_played:
+		ui_overlay_manager.turn_on_hint_text()
+		in_wood_zone = true
+		ui_overlay_manager.change_hint_text("Press E or Top Btn to pick up wood")
+
+
+func _on_wood_place_body_exited(_body: Node3D) -> void:
+	ui_overlay_manager.turn_off_hint_text()
+	in_wood_zone = false
+	
+
+
+func _on_planks_place_body_entered(body: Node3D) -> void:
+	in_plank_zone = true
+	ui_overlay_manager.change_hint_text("Press E or Top BTN to pick up planks")
+	ui_overlay_manager.turn_on_hint_text()
+
+
+func _on_planks_place_body_exited(body: Node3D) -> void:
+	ui_overlay_manager.turn_off_hint_text()
+	in_plank_zone = false
