@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://hpsygy4cycm8"]
+
+[ext_resource type="Script" uid="uid://b817x3rnaetsg" path="res://Scripts/ladder.gd" id="1_fnw1j"]
+[ext_resource type="ArrayMesh" uid="uid://3g1ikxifs7vk" path="res://Models/TileModels/Ladder.vox.obj" id="2_fc354"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cq4ai"]
+size = Vector3(0.7996216, 5.2674866, 1)
+
+[node name="Ladder" type="Node3D"]
+script = ExtResource("1_fnw1j")
+
+[node name="Ladder_vox" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.795, 0, 0, 0, 0.795, 0, 0, 0, 0.795, 0, 0, 0)
+mesh = ExtResource("2_fc354")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.021453857, 2.6419857, 0)
+shape = SubResource("BoxShape3D_cq4ai")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

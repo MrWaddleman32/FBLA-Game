@@ -10,6 +10,8 @@ var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var coyote_time := 0.15
 var coyote_counter := 0.0
 var respawn_position: Vector3 = Vector3(0, 1, 0)
+var on_ladder = false
+var ladder_speed = 3
 
 @onready var dust_trail: GPUParticles3D = $DustTrail
 @onready var anim_tree: AnimationTree = $AnimationTree
@@ -104,8 +106,21 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 
-	if not is_on_floor():
+	if not is_on_floor() and not on_ladder:
 		velocity.y -= gravity * delta
+	elif on_ladder:
+		velocity.y = 0
+		if Input.is_action_pressed("move_up"):
+			velocity.x = 0
+			velocity.z = 0
+			velocity.y = ladder_speed
+		elif Input.is_action_pressed("move_down"):
+			velocity.x = 0
+			velocity.z = 0
+			velocity.y = -ladder_speed
+		
+		move_and_slide()
+		return
 
 	# -----------------------
 	# Jump

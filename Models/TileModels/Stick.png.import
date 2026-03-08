@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpc23gk75rute"
-path.bptc="res://.godot/imported/Ladder.vox.png-7eeec4aa782e92e7b036adac4f8ebfa8.bptc.ctex"
+uid="uid://df7x5weewa381"
+path.bptc="res://.godot/imported/Stick.png-c59730047804f68dbaf22359f59b58db.bptc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Models/TileModels/Ladder.vox.png"
-dest_files=["res://.godot/imported/Ladder.vox.png-7eeec4aa782e92e7b036adac4f8ebfa8.bptc.ctex"]
+source_file="res://Models/TileModels/Stick.png"
+dest_files=["res://.godot/imported/Stick.png-c59730047804f68dbaf22359f59b58db.bptc.ctex"]
 
 [params]
 
