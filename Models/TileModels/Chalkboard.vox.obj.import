@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://u0d6nal4hefu"
+path="res://.godot/imported/Chalkboard.vox.obj-69e6cceed5802f4af68a24ac30df4305.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Chalkboard.vox.obj-69e6cceed5802f4af68a24ac30df4305.mesh"]
+
+source_file="res://Models/TileModels/Chalkboard.vox.obj"
+dest_files=["res://.godot/imported/Chalkboard.vox.obj-69e6cceed5802f4af68a24ac30df4305.mesh", "res://.godot/imported/Chalkboard.vox.obj-69e6cceed5802f4af68a24ac30df4305.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

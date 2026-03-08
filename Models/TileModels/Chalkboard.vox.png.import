@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpc23gk75rute"
-path.bptc="res://.godot/imported/Ladder.vox.png-7eeec4aa782e92e7b036adac4f8ebfa8.bptc.ctex"
+uid="uid://dav25spu2ul3g"
+path.s3tc="res://.godot/imported/Chalkboard.vox.png-8d10c7b1ba122e1c7d615da301fad6b9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,13 +11,13 @@ metadata={
 
 [deps]
 
-source_file="res://Models/TileModels/Ladder.vox.png"
-dest_files=["res://.godot/imported/Ladder.vox.png-7eeec4aa782e92e7b036adac4f8ebfa8.bptc.ctex"]
+source_file="res://Models/TileModels/Chalkboard.vox.png"
+dest_files=["res://.godot/imported/Chalkboard.vox.png-8d10c7b1ba122e1c7d615da301fad6b9.s3tc.ctex"]
 
 [params]
 
 compress/mode=2
-compress/high_quality=true
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0

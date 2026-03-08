@@ -12,6 +12,16 @@ var in_wood_zone = false
 var in_plank_zone = false
 var in_blueprint_zone = false
 var in_building_zone = false
+var can_build_ladder = false
+var can_place_ladder = false
+
+@onready var logs: Node3D = $"Building station/Logs"
+@onready var nails: Node3D = $"Building station/Nails"
+
+@onready var camera_3: Camera3D = $Camera3
+@onready var ladder_builder: AnimationPlayer = $"Building station/Logs/AnimationPlayer"
+@onready var ladder_place: Area3D = $"Ladder Place"
+@onready var ladder: Node3D = $"Ladder Place/Ladder"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -59,6 +69,12 @@ func _process(_delta: float) -> void:
 		Inventory.add("Stick")
 		if Inventory.inventory.count("Stick") >= 4:
 			ui_overlay_manager.change_instruction_text("Go to the building area and make the ladder")
+			can_build_ladder = true
+	elif in_building_zone and Input.is_action_just_pressed("pick_up_item") and can_build_ladder:
+		final_cutscene()
+	elif can_place_ladder and "Ladder" in Inventory.inventory and Input.is_action_just_pressed("pick_up_item"):
+		ladder.visible = true
+		
 
 
 func engineering_cs_pt2(body: Node3D) -> void:
@@ -141,3 +157,37 @@ func _on_building_station_body_entered(body: Node3D) -> void:
 		in_building_zone = true
 		ui_overlay_manager.turn_on_hint_text()
 		ui_overlay_manager.change_hint_text("Press E or top button to build the ladder")
+
+
+func _on_building_station_body_exited(body: Node3D) -> void:
+	in_building_zone = false
+	ui_overlay_manager.turn_off_hint_text()
+
+func final_cutscene():
+	camera_3.current = true
+	player.can_move = false
+	ladder_builder.play("Build Ladder")
+	logs.visible = true
+	for i in range(4):
+		Inventory.subtract("Wood")
+	for i in range(2):
+		Inventory.subtract("Stick")	
+	await CutsceneManager.wait(17)
+	player.can_move = true
+	camera_3.current = false
+	logs.visible = false
+	nails.visible = false
+	Inventory.add("Ladder")
+	ladder_place.visible = true
+
+
+func _on_ladder_place_body_entered(body: Node3D) -> void:
+	if body == player and "Ladder" in Inventory.inventory:
+		can_place_ladder = true
+		ui_overlay_manager.turn_on_hint_text()
+		ui_overlay_manager.change_hint_text("Place down the ladder")
+
+
+func _on_ladder_place_body_exited(body: Node3D) -> void:
+	can_place_ladder = false
+	ui_overlay_manager.turn_off_hint_text()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dprq1y0lanhkc"]
+[gd_scene load_steps=37 format=3 uid="uid://dprq1y0lanhkc"]
 
 [ext_resource type="Script" uid="uid://dersj2354cags" path="res://Scripts/engineering_world.gd" id="1_acmio"]
 [ext_resource type="PackedScene" uid="uid://cu55pejndo8j3" path="res://Scenes/character_body_3d.tscn" id="1_kmu22"]
@@ -6,6 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://bxnpi315xnmmk" path="res://Scenes/OldMan.tscn" id="3_ihxk4"]
 [ext_resource type="PackedScene" uid="uid://db8bvmwcxvhdf" path="res://Scenes/ui_overlay_manager.tscn" id="5_qib6p"]
 [ext_resource type="FontFile" uid="uid://dqb5ri464p1od" path="res://Fonts/PressStart2P-Regular.ttf" id="6_cyhdl"]
+[ext_resource type="ArrayMesh" uid="uid://dbb5q1k5m33ao" path="res://Models/TileModels/Hammer.obj" id="7_naq0m"]
+[ext_resource type="ArrayMesh" uid="uid://rlfbs5e0yf8g" path="res://Models/TileModels/nail.obj" id="8_1vbv0"]
+[ext_resource type="ArrayMesh" uid="uid://dm3oybieek5mq" path="res://Models/TileModels/Tree_Log.vox.obj" id="9_6np30"]
+[ext_resource type="ArrayMesh" uid="uid://unt3mqkcy0me" path="res://Models/TileModels/Stick.obj" id="10_1vbv0"]
+[ext_resource type="PackedScene" uid="uid://hpsygy4cycm8" path="res://Scenes/ladder.tscn" id="11_6np30"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4ov6g"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -96,6 +101,660 @@ autowrap_mode = 3
 [sub_resource type="BoxShape3D" id="BoxShape3D_naq0m"]
 size = Vector3(3.888794, 2.6757813, 4.4437256)
 
+[sub_resource type="Animation" id="Animation_oipuk"]
+resource_name = "Build Ladder"
+length = 17.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TreeLog_vox:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TreeLog_vox:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 0.40612602),
+"update": 0,
+"values": [Vector3(-1.1412172, 1.7398114, 1.1279469), Vector3(-0.122, 2.202, 0.577)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TreeLog_vox2:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.141, 1.74, 1.128), Vector3(0.3141923, 2.2019937, 0.5774069)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TreeLog_vox2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TreeLog_vox3:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.141, 1.74, 1.128), Vector3(0.751112, 2.2019937, 0.5774069)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TreeLog_vox3:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2, 2.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TreeLog_vox4:position")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(3, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.1412172, 1.7398114, 1.1279469), Vector3(-0.124106884, 2.2019937, 1.6209278)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("TreeLog_vox4:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 3, 3.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("TreeLog_vox5:position")
+tracks/8/interp = 2
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(4, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.1412172, 1.7398114, 1.1279469), Vector3(0.30775213, 2.2019937, 1.6209278)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("TreeLog_vox5:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 4, 4.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("TreeLog_vox6:position")
+tracks/10/interp = 2
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(5, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.1412172, 1.7398114, 1.1279469), Vector3(0.7518182, 2.2019937, 1.6209278)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("TreeLog_vox6:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 5, 5.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Stick:position")
+tracks/12/interp = 2
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(6, 7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.1412172, 1.7398114, 1.1279469), Vector3(0.29885912, 1.8158989, 1.0806303)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Stick:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 6, 6.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Stick2:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(7, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.1412172, 1.7398114, 1.1279469), Vector3(0.7925787, 1.8158989, 1.0806303)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Stick2:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 7, 7.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("../Nails/Nail3:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(8, 8.75, 11.375496, 11.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.0017571449, 2.0738957, 2.8400393), Vector3(0.2917242, 2.3473694, 0.70482063), Vector3(0.2917242, 2.3473694, 0.70482063), Vector3(0.2917242, 2.1175556, 0.70482063)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("../Nails/Nail3:rotation")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(8, 8.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -1.5707964), Vector3(0, 0, 0)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("../Hammer:position")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(9.75, 10.5, 11, 11.5, 12, 12.700001, 13.1, 13.7, 13.9, 14.366667, 14.800001, 15.266667, 15.666668, 16.566668),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.12157059, 2.1, 2.5440426), Vector3(-0.16869736, 2.4787273, 0.6607151), Vector3(-0.16869736, 2.4787273, 0.6607151), Vector3(-0.16869736, 2.4787273, 0.6607151), Vector3(0.3217697, 2.4787273, 0.6607151), Vector3(0.3217697, 2.4787273, 0.6607151), Vector3(0.3217697, 2.4787273, 1.4840975), Vector3(0.3217697, 2.4787273, 1.4840975), Vector3(0.3217697, 2.4787273, 1.4840975), Vector3(-0.20086765, 2.4787273, 1.4840975), Vector3(-0.20086765, 2.4787273, 1.4840975), Vector3(-0.20086765, 2.4787273, 1.4840975), Vector3(-0.20086765, 2.4787273, 1.4840975), Vector3(-0.12157059, 2.1, 2.5440426)]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("../Hammer:rotation")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(9.75, 10.5, 11, 11.5, 11.8, 12, 12.5, 12.700001, 12.866668, 13.1, 13.7, 13.9, 14.366667, 14.800001, 15.266667, 15.466667, 15.666668, 16.566668),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1.5707964, 1.5707964, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, -0.98300433), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, -0.9466142), Vector3(0, 0, -0.9466142), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, -1.0367255), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, -1.1711159), Vector3(0, 0, -1.1711159), Vector3(0, 0, 0), Vector3(1.5707964, 1.5707964, 0)]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("../Nails/Nail:position")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(8.15, 8.9, 12.365497, 12.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.0017571449, 2.0738957, 2.9508905), Vector3(0.774, 2.347, 0.705), Vector3(0.774, 2.347, 0.7049999), Vector3(0.77400017, 2.0998333, 0.7049999)]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("../Nails/Nail:rotation")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(8.15, 8.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -1.5707964), Vector3(0, 0, 0)]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("../Nails/Nail2:position")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(8.3, 9.05, 13.633333, 13.833333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.0017571449, 2.0738957, 3.078762), Vector3(0.774, 2.347, 1.523), Vector3(0.774, 2.347, 1.523), Vector3(0.77400017, 2.084166, 1.5229998)]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("../Nails/Nail2:rotation")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(8.3, 9.05),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -1.5707964), Vector3(0, 0, 0)]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("../Nails/Nail4:position")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(8.45, 9.2, 15.166667, 15.366668),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.0017571449, 2.0738957, 3.2077093), Vector3(0.292, 2.347, 1.523), Vector3(0.292, 2.347, 1.523), Vector3(0.29199982, 1.9426672, 1.5229998)]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("../Nails/Nail4:rotation")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(8.45, 9.193207),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -1.5707964), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qofrg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TreeLog_vox:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.12170744, 2.1983662, 0.5762415)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TreeLog_vox:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TreeLog_vox2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.3141923, 2.2019937, 0.5774069)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TreeLog_vox2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TreeLog_vox3:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.751112, 2.2019937, 0.5774069)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TreeLog_vox3:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TreeLog_vox4:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.124106884, 2.2019937, 1.6209278)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("TreeLog_vox4:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("TreeLog_vox5:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.30775213, 2.2019937, 1.6209278)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("TreeLog_vox5:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("TreeLog_vox6:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.7518182, 2.2019937, 1.6209278)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("TreeLog_vox6:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Stick:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.29885912, 1.8158989, 1.0806303)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Stick:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Stick2:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.7925787, 1.8158989, 1.0806303)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Stick2:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("../Nails/Nail3:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.0017571449, 2.0738957, 2.8400393)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("../Nails/Nail3:rotation")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -1.5707964)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("../Hammer:position")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.12157059, 2.1, 2.5440426)]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("../Hammer:rotation")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.5707964, 1.5707964, 0)]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("../Nails/Nail:position")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.0017571449, 2.0738957, 2.9508905)]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("../Nails/Nail:rotation")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -1.5707964)]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("../Nails/Nail2:position")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.0017571449, 2.0738957, 3.078762)]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("../Nails/Nail2:rotation")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -1.5707964)]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("../Nails/Nail4:position")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.0017571449, 2.0738957, 3.2077093)]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("../Nails/Nail4:rotation")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -1.5707964)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ii3ut"]
+_data = {
+&"Build Ladder": SubResource("Animation_oipuk"),
+&"RESET": SubResource("Animation_qofrg")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1vbv0"]
+size = Vector3(2.3579102, 1, 1.1953125)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6np30"]
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="TorusMesh" id="TorusMesh_oipuk"]
+material = SubResource("StandardMaterial3D_6np30")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qofrg"]
+
+[sub_resource type="TextMesh" id="TextMesh_ii3ut"]
+material = SubResource("StandardMaterial3D_qofrg")
+text = "Place Ladder here"
+font = ExtResource("6_cyhdl")
+font_size = 31
+
 [node name="Engineering World" type="Node3D"]
 script = ExtResource("1_acmio")
 
@@ -133,7 +792,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 curve = SubResource("Curve3D_acmio")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(-0.99995935, 0, -0.002385675, 0, 1, 0, 0.002385675, 0, -0.99995935, -0.03250584, 0, 2.375716)
+transform = Transform3D(-0.9999575, 0, -0.0023856706, 0, 1, 0, 0.0023856706, 0, -0.9999575, -0.03250584, 0, 2.375716)
 
 [node name="Teacher" parent="Path3D/PathFollow3D" instance=ExtResource("3_ihxk4")]
 transform = Transform3D(-1.2098233, 0, 0.02068308, 0, 1.21, 0, -0.02068308, 0, -1.2098233, 0, 0, 1.375)
@@ -185,12 +844,111 @@ shape = SubResource("BoxShape3D_cyhdl")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.139178, 0, 7.671591)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Building station"]
-transform = Transform3D(-8.4581536e-08, 0, -1.935, 0, 1.935, 0, 1.935, 0, -8.4581536e-08, 2.6202168, 2.9109101, 1.4456873)
+transform = Transform3D(-8.4581536e-08, 0, -1.935, 0, 1.935, 0, 1.935, 0, -8.4581536e-08, -0.1998334, 1.452801, 1.4456873)
 mesh = SubResource("TextMesh_hvjtq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Building station"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7697005, 0.8378906, 1.9170027)
 shape = SubResource("BoxShape3D_naq0m")
+
+[node name="Hammer" type="MeshInstance3D" parent="Building station"]
+transform = Transform3D(-1.4861872e-08, 0.34, -1.4861876e-08, 0, -1.4861872e-08, -0.3400001, -0.34, -1.4861872e-08, 6.4963324e-16, -0.12157059, 2.1, 2.5440426)
+mesh = ExtResource("7_naq0m")
+
+[node name="Nails" type="Node3D" parent="Building station"]
+
+[node name="Nail" type="MeshInstance3D" parent="Building station/Nails"]
+transform = Transform3D(-8.960834e-09, 0.20499998, 0, -0.20499998, -8.960834e-09, 0, 0, 0, 0.205, -0.0017571449, 2.0738957, 2.9508905)
+mesh = ExtResource("8_1vbv0")
+skeleton = NodePath("../..")
+
+[node name="Nail2" type="MeshInstance3D" parent="Building station/Nails"]
+transform = Transform3D(-8.960834e-09, 0.20499998, 0, -0.20499998, -8.960834e-09, 0, 0, 0, 0.205, -0.0017571449, 2.0738957, 3.078762)
+mesh = ExtResource("8_1vbv0")
+skeleton = NodePath("../..")
+
+[node name="Nail3" type="MeshInstance3D" parent="Building station/Nails"]
+transform = Transform3D(-8.960834e-09, 0.20499998, 0, -0.20499998, -8.960834e-09, 0, 0, 0, 0.205, -0.0017571449, 2.0738957, 2.8400393)
+mesh = ExtResource("8_1vbv0")
+skeleton = NodePath("../..")
+
+[node name="Nail4" type="MeshInstance3D" parent="Building station/Nails"]
+transform = Transform3D(-8.960834e-09, 0.20499998, 0, -0.20499998, -8.960834e-09, 0, 0, 0, 0.205, -0.0017571449, 2.0738957, 3.2077093)
+mesh = ExtResource("8_1vbv0")
+skeleton = NodePath("../..")
+
+[node name="Logs" type="Node3D" parent="Building station"]
+visible = false
+
+[node name="TreeLog_vox" type="MeshInstance3D" parent="Building station/Logs"]
+transform = Transform3D(5.3065716e-09, 0.445, 0, -0.445, 5.3065716e-09, 0, 0, 0, 0.445, -0.12170744, 2.1983662, 0.5762415)
+visible = false
+mesh = ExtResource("9_6np30")
+skeleton = NodePath("../../..")
+
+[node name="TreeLog_vox2" type="MeshInstance3D" parent="Building station/Logs"]
+transform = Transform3D(5.3065716e-09, 0.445, 0, -0.445, 5.3065716e-09, 0, 0, 0, 0.445, 0.3141923, 2.2019937, 0.5774069)
+mesh = ExtResource("9_6np30")
+skeleton = NodePath("../../..")
+
+[node name="TreeLog_vox3" type="MeshInstance3D" parent="Building station/Logs"]
+transform = Transform3D(5.3065716e-09, 0.445, 0, -0.445, 5.3065716e-09, 0, 0, 0, 0.445, 0.751112, 2.2019937, 0.5774069)
+visible = false
+mesh = ExtResource("9_6np30")
+skeleton = NodePath("../../..")
+
+[node name="TreeLog_vox4" type="MeshInstance3D" parent="Building station/Logs"]
+transform = Transform3D(5.3065716e-09, 0.445, 0, -0.445, 5.3065716e-09, 0, 0, 0, 0.445, -0.124106884, 2.2019937, 1.6209278)
+mesh = ExtResource("9_6np30")
+skeleton = NodePath("../../..")
+
+[node name="TreeLog_vox5" type="MeshInstance3D" parent="Building station/Logs"]
+transform = Transform3D(5.3065716e-09, 0.445, 0, -0.445, 5.3065716e-09, 0, 0, 0, 0.445, 0.30775213, 2.2019937, 1.6209278)
+mesh = ExtResource("9_6np30")
+skeleton = NodePath("../../..")
+
+[node name="TreeLog_vox6" type="MeshInstance3D" parent="Building station/Logs"]
+transform = Transform3D(5.3065716e-09, 0.445, 0, -0.445, 5.3065716e-09, 0, 0, 0, 0.445, 0.7518182, 2.2019937, 1.6209278)
+mesh = ExtResource("9_6np30")
+skeleton = NodePath("../../..")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Building station/Logs"]
+libraries = {
+&"": SubResource("AnimationLibrary_ii3ut")
+}
+
+[node name="Stick" type="MeshInstance3D" parent="Building station/Logs"]
+transform = Transform3D(6.1413132e-09, 0, -0.515, 0, 0.515, 0, 0.515, 0, 6.1413132e-09, 0.29885912, 1.8158989, 1.0806303)
+mesh = ExtResource("10_1vbv0")
+skeleton = NodePath("../..")
+
+[node name="Stick2" type="MeshInstance3D" parent="Building station/Logs"]
+transform = Transform3D(6.1413132e-09, 0, -0.515, 0, 0.515, 0, 0.515, 0, 6.1413132e-09, 0.7925787, 1.8158989, 1.0806303)
+mesh = ExtResource("10_1vbv0")
+skeleton = NodePath("../..")
+
+[node name="Camera3" type="Camera3D" parent="."]
+transform = Transform3D(-0.0005861531, -0.9894856, 0.14462975, -0.00931902, 0.14462897, 0.989442, -0.9999564, -0.0007678436, -0.009305813, 4.7895737, 4.5477, 8.831483)
+
+[node name="Ladder Place" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6507218, 1.0148718, 17.181376)
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ladder Place"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08862305, 0, -0.09765625)
+shape = SubResource("BoxShape3D_1vbv0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ladder Place"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15402496, 0.59731865)
+mesh = SubResource("TorusMesh_oipuk")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Ladder Place"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.81497645, 1.0949898)
+mesh = SubResource("TextMesh_ii3ut")
+
+[node name="Ladder" parent="Ladder Place" instance=ExtResource("11_6np30")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07739508, -0.104984045, 1.5972843)
+visible = false
 
 [connection signal="body_entered" from="TPToMain" to="Player" method="_on_tp_to_main_body_entered"]
 [connection signal="body_entered" from="Area3D" to="." method="engineering_cs_pt2"]
@@ -201,3 +959,6 @@ shape = SubResource("BoxShape3D_naq0m")
 [connection signal="body_entered" from="Blueprint area" to="." method="_on_blueprint_area_body_entered"]
 [connection signal="body_exited" from="Blueprint area" to="." method="_on_blueprint_area_body_exited"]
 [connection signal="body_entered" from="Building station" to="." method="_on_building_station_body_entered"]
+[connection signal="body_exited" from="Building station" to="." method="_on_building_station_body_exited"]
+[connection signal="body_entered" from="Ladder Place" to="." method="_on_ladder_place_body_entered"]
+[connection signal="body_exited" from="Ladder Place" to="." method="_on_ladder_place_body_exited"]

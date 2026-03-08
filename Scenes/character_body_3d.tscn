@@ -6,7 +6,7 @@
 [ext_resource type="ArrayMesh" uid="uid://c7rgtjqnbgawt" path="res://Models/PlayerModels/CharacterSprite1.vox.obj" id="3_vd578"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fb3t6"]
-size = Vector3(0.7846527, 1.5095196, 0.96673393)
+size = Vector3(0.7846527, 1.281127, 0.96673393)
 
 [sub_resource type="Curve" id="Curve_vd578"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.4015152, 1), 0.0, 0.0, 0, 0, Vector2(0.49242425, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -107,21 +107,22 @@ states/Walk/position = Vector2(460.26025, 82)
 transitions = ["Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_nl27k"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_obynr"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_jvo56")]
 graph_offset = Vector2(56.26024, 0)
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("camera_pivot", "camera")]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("camera_pivot", "camera") groups=["Player"]]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 script = ExtResource("1_iwpo4")
 camera_pivot = NodePath("CameraPivot")
 camera = NodePath("CameraPivot/Camera3D")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.018020526, 0.7882994, 0.07459164)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." groups=["Player"]]
+transform = Transform3D(1.43, 0, 0, 0, 1.43, 0, 0, 0, 1.43, 0.018020526, 0.9516001, 0.07459164)
 shape = SubResource("BoxShape3D_fb3t6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.43, 0, 0, 0, 1.43, 0, 0, 0, 1.43, 0, 0, 0)
 mesh = ExtResource("2_fb3t6")
 
 [node name="DustTrail" type="GPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.046, 0.039, -0.238)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.046, 0.039, -0.3913022)
 emitting = false
 speed_scale = 3.81
 process_material = SubResource("ParticleProcessMaterial_nl27k")
