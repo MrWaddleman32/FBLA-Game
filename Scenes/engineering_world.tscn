@@ -792,7 +792,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 curve = SubResource("Curve3D_acmio")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(-0.9999575, 0, -0.0023856706, 0, 1, 0, 0.0023856706, 0, -0.9999575, -0.03250584, 0, 2.375716)
+transform = Transform3D(-0.9999565, 0, -0.002385668, 0, 1, 0, 0.002385668, 0, -0.9999565, -0.03250584, 0, 2.375716)
 
 [node name="Teacher" parent="Path3D/PathFollow3D" instance=ExtResource("3_ihxk4")]
 transform = Transform3D(-1.2098233, 0, 0.02068308, 0, 1.21, 0, -0.02068308, 0, -1.2098233, 0, 0, 1.375)

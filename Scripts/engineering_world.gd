@@ -74,6 +74,7 @@ func _process(_delta: float) -> void:
 		final_cutscene()
 	elif can_place_ladder and "Ladder" in Inventory.inventory and Input.is_action_just_pressed("pick_up_item"):
 		ladder.visible = true
+		Inventory.subtract("Ladder")
 		
 
 

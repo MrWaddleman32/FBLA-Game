@@ -1,9 +1,12 @@
-[gd_scene load_steps=21 format=3 uid="uid://cu55pejndo8j3"]
+[gd_scene load_steps=31 format=3 uid="uid://cu55pejndo8j3"]
 
 [ext_resource type="Script" uid="uid://dxjmwdlj5dcrl" path="res://Scripts/player.gd" id="1_iwpo4"]
 [ext_resource type="ArrayMesh" uid="uid://dyp04eqo7q7md" path="res://Models/PlayerModels/CharacterSprite2.vox.obj" id="2_fb3t6"]
 [ext_resource type="ArrayMesh" uid="uid://budhl2oqmvuci" path="res://Models/PlayerModels/CharacterSpriteIdle.vox.obj" id="3_c7tqt"]
 [ext_resource type="ArrayMesh" uid="uid://c7rgtjqnbgawt" path="res://Models/PlayerModels/CharacterSprite1.vox.obj" id="3_vd578"]
+[ext_resource type="ArrayMesh" uid="uid://dg6t2ytal2dky" path="res://Models/TileModels/Builderman.vox.obj" id="5_3yrqx"]
+[ext_resource type="ArrayMesh" uid="uid://t71pknqrvmk2" path="res://Models/TileModels/Builder_Walk2.vox.obj" id="6_6lwhy"]
+[ext_resource type="ArrayMesh" uid="uid://bslo18pl6ajul" path="res://Models/TileModels/Builder_Walk1.vox.obj" id="7_p4upn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fb3t6"]
 size = Vector3(0.7846527, 1.281127, 0.96673393)
@@ -74,12 +77,51 @@ tracks/0/keys = {
 "values": [ExtResource("2_fb3t6"), ExtResource("3_vd578"), ExtResource("2_fb3t6"), ExtResource("3_vd578"), ExtResource("2_fb3t6"), ExtResource("3_vd578")]
 }
 
+[sub_resource type="Animation" id="Animation_x0ixa"]
+resource_name = "EngineeringIdle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:mesh")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_3yrqx")]
+}
+
+[sub_resource type="Animation" id="Animation_socri"]
+resource_name = "EngineeringWalk"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:mesh")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("6_6lwhy"), ExtResource("7_p4upn"), ExtResource("6_6lwhy"), ExtResource("7_p4upn"), ExtResource("6_6lwhy"), ExtResource("7_p4upn")]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vd578"]
 _data = {
+&"EngineeringIdle": SubResource("Animation_x0ixa"),
+&"EngineeringWalk": SubResource("Animation_socri"),
 &"Idle": SubResource("Animation_fb3t6"),
 &"RESET": SubResource("Animation_nl27k"),
 &"Walk": SubResource("Animation_c7tqt")
 }
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_alkdh"]
+animation = &"EngineeringIdle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3yrqx"]
+animation = &"EngineeringWalk"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vd578"]
 animation = &"Idle"
@@ -97,14 +139,31 @@ advance_condition = &"is_idle"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jvo56"]
 advance_mode = 2
+advance_expression = "get_tree().current_scene.name == \"BegCutScene\""
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kv8is"]
+advance_mode = 2
+advance_expression = "get_tree().current_scene.name == \"Engineering World\""
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6lwhy"]
+advance_mode = 2
+advance_condition = &"is_moving"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_p4upn"]
+advance_mode = 2
+advance_condition = &"is_idle"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_1igb4"]
+states/EngineeringIdle/node = SubResource("AnimationNodeAnimation_alkdh")
+states/EngineeringIdle/position = Vector2(400.26025, 176)
+states/EngineeringWalk/node = SubResource("AnimationNodeAnimation_3yrqx")
+states/EngineeringWalk/position = Vector2(783.26025, 224)
 states/Idle/node = SubResource("AnimationNodeAnimation_vd578")
 states/Idle/position = Vector2(319.26025, 47.5)
 states/Start/position = Vector2(202, 100.125)
 states/Walk/node = SubResource("AnimationNodeAnimation_c7tqt")
 states/Walk/position = Vector2(460.26025, 82)
-transitions = ["Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_nl27k"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_obynr"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_jvo56")]
+transitions = ["Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_nl27k"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_obynr"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_jvo56"), "Start", "EngineeringIdle", SubResource("AnimationNodeStateMachineTransition_kv8is"), "EngineeringIdle", "EngineeringWalk", SubResource("AnimationNodeStateMachineTransition_6lwhy"), "EngineeringWalk", "EngineeringIdle", SubResource("AnimationNodeStateMachineTransition_p4upn")]
 graph_offset = Vector2(56.26024, 0)
 
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("camera_pivot", "camera") groups=["Player"]]

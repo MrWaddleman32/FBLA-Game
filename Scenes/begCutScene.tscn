@@ -23,7 +23,7 @@ size = Vector3(1.857666, 1.6512451, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_1gcf4"]
 
-[node name="Node3D" type="Node3D"]
+[node name="BegCutScene" type="Node3D"]
 script = ExtResource("1_bx7ib")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
