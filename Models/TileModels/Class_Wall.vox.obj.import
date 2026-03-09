@@ -3,7 +3,7 @@
 importer="wavefront_obj"
 importer_version=1
 type="Mesh"
-uid="uid://cej6oyvg7h0u6"
+uid="uid://bvdgn3rpgam56"
 path="res://.godot/imported/Class_Wall.vox.obj-bd264542c6488967b621a1e859dd5c1a.mesh"
 
 [deps]
@@ -20,10 +20,6 @@ generate_lods=true
 generate_shadow_mesh=true
 generate_lightmap_uv2=false
 generate_lightmap_uv2_texel_size=0.2
-<<<<<<< Updated upstream
-scale_mesh=Vector3(0.625, 0.625, 0.625)
-=======
 scale_mesh=Vector3(1, 1, 1)
->>>>>>> Stashed changes
 offset_mesh=Vector3(0, 0, 0)
 force_disable_mesh_compression=false
