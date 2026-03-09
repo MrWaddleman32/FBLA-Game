@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cjbyc4ns1x885"
+path="res://.godot/imported/Lab_Wall.vox.obj-577c5e32dd44396ba08fb4859e68df50.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Lab_Wall.vox.obj-577c5e32dd44396ba08fb4859e68df50.mesh"]
+
+source_file="res://Models/TileModels/Lab_Wall.vox.obj"
+dest_files=["res://.godot/imported/Lab_Wall.vox.obj-577c5e32dd44396ba08fb4859e68df50.mesh", "res://.godot/imported/Lab_Wall.vox.obj-577c5e32dd44396ba08fb4859e68df50.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(0.625, 0.625, 0.625)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
