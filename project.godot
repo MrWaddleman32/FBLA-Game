@@ -27,6 +27,10 @@ window/size/viewport_height=720
 window/size/mode=3
 window/stretch/aspect="expand"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/MagicaVoxel_Importer_with_Extensions/plugin.cfg")
+
 [global_group]
 
 Entities=""

@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b0nqdbw7n86m2"
+path="res://.godot/imported/Teacher_Chair.vox.obj-08343b8e825cce0882f532d840c4ffa9.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Teacher_Chair.vox.obj-08343b8e825cce0882f532d840c4ffa9.mesh"]
+
+source_file="res://Models/TileModels/Teacher_Chair.vox.obj"
+dest_files=["res://.godot/imported/Teacher_Chair.vox.obj-08343b8e825cce0882f532d840c4ffa9.mesh", "res://.godot/imported/Teacher_Chair.vox.obj-08343b8e825cce0882f532d840c4ffa9.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
