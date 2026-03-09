@@ -31,6 +31,37 @@ albedo_color = Color(0.28485027, 0.28485027, 0.28485027, 1)
 material = SubResource("StandardMaterial3D_fa3hm")
 size = Vector3(0.2, 0.2, 0.2)
 
+[sub_resource type="Animation" id="Animation_x0ixa"]
+resource_name = "EngineeringIdle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:mesh")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_3yrqx")]
+}
+
+[sub_resource type="Animation" id="Animation_socri"]
+resource_name = "EngineeringWalk"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:mesh")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("6_6lwhy"), ExtResource("7_p4upn"), ExtResource("6_6lwhy"), ExtResource("7_p4upn"), ExtResource("6_6lwhy"), ExtResource("7_p4upn")]
+}
+
 [sub_resource type="Animation" id="Animation_fb3t6"]
 resource_name = "Idle"
 tracks/0/type = "value"
@@ -75,37 +106,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [ExtResource("2_fb3t6"), ExtResource("3_vd578"), ExtResource("2_fb3t6"), ExtResource("3_vd578"), ExtResource("2_fb3t6"), ExtResource("3_vd578")]
-}
-
-[sub_resource type="Animation" id="Animation_x0ixa"]
-resource_name = "EngineeringIdle"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D:mesh")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("5_3yrqx")]
-}
-
-[sub_resource type="Animation" id="Animation_socri"]
-resource_name = "EngineeringWalk"
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D:mesh")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("6_6lwhy"), ExtResource("7_p4upn"), ExtResource("6_6lwhy"), ExtResource("7_p4upn"), ExtResource("6_6lwhy"), ExtResource("7_p4upn")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vd578"]
@@ -199,7 +199,7 @@ parameters/conditions/is_idle = false
 parameters/conditions/is_moving = false
 
 [node name="CameraPivot" type="Node3D" parent="."]
-transform = Transform3D(-1, 1.3525212e-08, -8.637019e-08, 0, 0.98795986, 0.1547104, 8.742278e-08, 0.1547104, -0.98795986, 0, 0, 0)
+transform = Transform3D(-1.43, 3.3405687e-08, -1.491778e-07, 0, 1.4127825, 0.1547104, 2.1592399e-07, 0.22123586, -0.98795986, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
 transform = Transform3D(2, 0, 0, 0, 1.9318517, 0.51763815, 0, -0.51763815, 1.9318516, 0, 2, 6)

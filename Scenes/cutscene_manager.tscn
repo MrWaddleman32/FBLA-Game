@@ -12,6 +12,7 @@ font_size = 45
 script = ExtResource("1_y06b0")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
 
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
 anchors_preset = -1
