@@ -1,10 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://db8bvmwcxvhdf"]
+[gd_scene load_steps=10 format=3 uid="uid://db8bvmwcxvhdf"]
 
 [ext_resource type="Script" uid="uid://djehob1awt3ak" path="res://Scripts/ui_overlay_manager.gd" id="1_n2ry3"]
 [ext_resource type="FontFile" uid="uid://dqb5ri464p1od" path="res://Fonts/PressStart2P-Regular.ttf" id="2_ppxak"]
+[ext_resource type="Texture2D" uid="uid://veep0slh33cm" path="res://Button Sprites/Panel.png" id="3_a2xq5"]
+[ext_resource type="Texture2D" uid="uid://dvvdpf4fo4uq2" path="res://Button Sprites/playbutton.png" id="4_yuvy0"]
+[ext_resource type="Texture2D" uid="uid://ccbg7kmjd5l8j" path="res://Button Sprites/optionsBTN.png" id="5_4tuhk"]
+[ext_resource type="Texture2D" uid="uid://dn448pc7lkeuk" path="res://Button Sprites/quitbutton.png" id="6_dax5g"]
+[ext_resource type="Texture2D" uid="uid://de8sc5iadkh50" path="res://Button Sprites/BackBTN.png" id="7_yuvy0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ppxak"]
 font = ExtResource("2_ppxak")
+
+[sub_resource type="LabelSettings" id="LabelSettings_a2xq5"]
+font = ExtResource("2_ppxak")
+font_size = 66
+font_color = Color(0, 0, 0, 1)
 
 [node name="UI_Overlay_Manager" type="Node3D"]
 script = ExtResource("1_n2ry3")
@@ -55,3 +65,139 @@ label_settings = SubResource("LabelSettings_ppxak")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+
+[node name="Menu Panel" type="TextureRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.333
+anchor_top = 0.12200001
+anchor_right = 0.66700006
+anchor_bottom = 0.87600005
+offset_left = -0.23999023
+offset_top = 0.15999603
+offset_right = 0.2399292
+offset_bottom = 0.27996826
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_a2xq5")
+expand_mode = 5
+
+[node name="PlayBTN" type="TextureButton" parent="CanvasLayer/Menu Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.24100001
+anchor_top = 0.13000001
+anchor_right = 0.77300006
+anchor_bottom = 0.293
+offset_left = -0.14800262
+offset_top = -3.590004
+offset_right = 0.15597534
+offset_bottom = -0.09901428
+texture_normal = ExtResource("4_yuvy0")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="OptionsBTN" type="TextureButton" parent="CanvasLayer/Menu Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.266
+anchor_top = 0.43800002
+anchor_right = 0.74300003
+anchor_bottom = 0.56700003
+offset_left = 0.15200043
+offset_top = 0.1659851
+offset_right = -0.0040283203
+offset_bottom = 0.11898804
+texture_normal = ExtResource("5_4tuhk")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Menu Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.66700006
+anchor_right = 0.78300005
+anchor_bottom = 0.88600004
+offset_left = 0.13599396
+offset_top = -0.18103027
+offset_right = -0.12402344
+offset_bottom = -0.09802246
+texture_normal = ExtResource("6_dax5g")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="Options Panel" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_a2xq5")
+expand_mode = 5
+
+[node name="Label" type="Label" parent="CanvasLayer/Options Panel"]
+custom_minimum_size = Vector2(1.15, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.051999997
+anchor_top = 0.5
+anchor_right = 0.051999997
+anchor_bottom = 0.5
+offset_left = -66.56
+offset_top = -33.0
+offset_right = 527.44
+offset_bottom = 33.0
+grow_vertical = 2
+text = " Volume: "
+label_settings = SubResource("LabelSettings_a2xq5")
+vertical_alignment = 1
+uppercase = true
+visible_characters_behavior = 1
+text_direction = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Options Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.19000001
+anchor_top = 0.05
+anchor_right = 0.80600005
+anchor_bottom = 0.34600002
+offset_left = -0.2000122
+offset_right = 0.3199463
+offset_bottom = -0.120010376
+grow_horizontal = 2
+texture = ExtResource("5_4tuhk")
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Options Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.98046875
+anchor_top = 0.9611111
+anchor_right = 0.98046875
+anchor_bottom = 0.9611111
+offset_left = -335.0
+offset_top = -115.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("7_yuvy0")
+metadata/_edit_use_anchors_ = true
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer/Options Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.44444445
+anchor_right = 0.9484375
+anchor_bottom = 0.5638889
+grow_horizontal = 0
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="CanvasLayer/Menu Panel/PlayBTN" to="." method="_on_play_btn_pressed"]
+[connection signal="pressed" from="CanvasLayer/Menu Panel/OptionsBTN" to="." method="_on_options_btn_pressed"]
+[connection signal="pressed" from="CanvasLayer/Options Panel/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="value_changed" from="CanvasLayer/Options Panel/HSlider" to="." method="_on_h_slider_value_changed"]

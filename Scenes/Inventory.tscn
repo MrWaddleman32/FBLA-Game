@@ -12,13 +12,13 @@ script = ExtResource("1_jbd0o")
 [node name="GridContainer" type="GridContainer" parent="CanvasLayer"]
 anchors_preset = -1
 anchor_left = 0.298
-anchor_top = 0.794
+anchor_top = 0.84800005
 anchor_right = 0.702
-anchor_bottom = 0.933
+anchor_bottom = 0.98700005
 offset_left = 0.55999756
-offset_top = 0.22503662
+offset_top = -0.27508545
 offset_right = -0.5600586
-offset_bottom = 0.14501953
+offset_bottom = -0.3550415
 grow_horizontal = 2
 grow_vertical = 0
 columns = 5

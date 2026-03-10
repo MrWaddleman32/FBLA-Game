@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://btkeb1s7j4dh8"]
+[gd_scene load_steps=11 format=3 uid="uid://btkeb1s7j4dh8"]
 
 [ext_resource type="Script" uid="uid://0wbxgel4j0ey" path="res://Scripts/beg_cut_scene.gd" id="1_bx7ib"]
 [ext_resource type="MeshLibrary" uid="uid://cfsjkwq0d6ag" path="res://Models/Tilemesh/TilesFixed2.tres" id="2_m0wp2"]
 [ext_resource type="PackedScene" uid="uid://cu55pejndo8j3" path="res://Scenes/character_body_3d.tscn" id="3_1gcf4"]
 [ext_resource type="PackedScene" uid="uid://bxnpi315xnmmk" path="res://Scenes/OldMan.tscn" id="4_m0wp2"]
+[ext_resource type="PackedScene" uid="uid://db8bvmwcxvhdf" path="res://Scenes/ui_overlay_manager.tscn" id="5_1gcf4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xa28p"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -67,5 +68,8 @@ shape = SubResource("BoxShape3D_m0wp2")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 0.05397421, -0.9985423, 0, 0.9985423, 0.05397421, 0, 2, -9)
 mesh = SubResource("PlaneMesh_1gcf4")
+
+[node name="UI_Overlay_Manager" parent="." instance=ExtResource("5_1gcf4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8314064, 2.1049457, 3)
 
 [connection signal="body_entered" from="Area3D" to="CharacterBody3D2" method="tp_to_eg"]

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://54tjqf3cbou3"]
+
+[ext_resource type="Script" uid="uid://bwegtb05pvbi" path="res://Scenes/bg_music.gd" id="1_0kug2"]
+[ext_resource type="AudioStream" uid="uid://c30aviknfcdo" path="res://Sounds/8 Bit Fantasy & Adventure Music - Creative Commons.mp3" id="1_wrh0v"]
+
+[node name="BGMusic" type="Node3D"]
+script = ExtResource("1_0kug2")
+
+[node name="BGMusic" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("1_wrh0v")
+volume_db = -26.553
+autoplay = true

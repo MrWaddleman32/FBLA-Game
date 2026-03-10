@@ -130,7 +130,6 @@ func _physics_process(delta: float) -> void:
 		coyote_counter = 0.0
 
 	move_and_slide()
-	print(get_tree().current_scene.name)
 	# -----------------------
 	# Animation
 	# -----------------------

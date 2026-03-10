@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c30aviknfcdo"
+path="res://.godot/imported/8 Bit Fantasy & Adventure Music - Creative Commons.mp3-85f72b4ab4c2f2bcf21314678901a8fa.mp3str"
+
+[deps]
+
+source_file="res://Sounds/8 Bit Fantasy & Adventure Music - Creative Commons.mp3"
+dest_files=["res://.godot/imported/8 Bit Fantasy & Adventure Music - Creative Commons.mp3-85f72b4ab4c2f2bcf21314678901a8fa.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
