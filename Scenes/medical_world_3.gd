@@ -20,7 +20,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if can_leave and "Key" in Inventory.inventory and Input.is_action_just_pressed("pick_up_item"):
-		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+		get_tree().change_scene_to_file("res://Scenes/science_world.tscn")
 
 
 func _on_leave_area_body_entered(body: Node3D) -> void:

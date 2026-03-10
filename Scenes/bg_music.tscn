@@ -9,4 +9,5 @@ script = ExtResource("1_0kug2")
 [node name="BGMusic" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("1_wrh0v")
 volume_db = -26.553
+unit_size = 36.78
 autoplay = true

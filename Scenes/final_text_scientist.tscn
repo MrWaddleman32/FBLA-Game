@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://bg5yxp7xrxsga"]
+
+[ext_resource type="FontFile" uid="uid://dqb5ri464p1od" path="res://Fonts/PressStart2P-Regular.ttf" id="1_0o068"]
+[ext_resource type="Script" uid="uid://bk3441bdyvnj8" path="res://Scripts/final_text_scientist.gd" id="1_glw61"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5srsg"]
+font = ExtResource("1_0o068")
+font_size = 36
+
+[sub_resource type="LabelSettings" id="LabelSettings_2dt4y"]
+font = ExtResource("1_0o068")
+font_size = 36
+
+[node name="Final Text Scientist" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_glw61")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.439
+anchor_right = 0.6
+anchor_bottom = 0.56100005
+offset_left = 0.5
+offset_top = -0.06750488
+offset_right = -0.5
+offset_bottom = 0.06744385
+grow_horizontal = 2
+grow_vertical = 2
+text = "You have become a Scientist"
+label_settings = SubResource("LabelSettings_5srsg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Explanation Label" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0.2046875
+anchor_top = 0.5708333
+anchor_right = 0.75078124
+anchor_bottom = 0.86388886
+text = "you run experiments to test ideas and learn how different substances react. You mix chemicals carefully, record your observations, and analyze the results to see what happened. You then use what you learned to draw conclusions or develop new discoveries."
+label_settings = SubResource("LabelSettings_2dt4y")
+horizontal_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true

@@ -41,4 +41,4 @@ func _on_lab_station_body_entered(body: Node3D) -> void:
 		ui_overlay_manager.change_hint_text("Press E or Top Button to enter the mixing station")
 		
 func open_mixing_station():
-	get_tree().change_scene_to_file("res://mixing_station.tscn")
+	get_tree().change_scene_to_file("res://Scenes/mixing_station.tscn")

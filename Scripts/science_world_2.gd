@@ -33,3 +33,8 @@ func _on_explosion_zone_body_entered(body: Node3D) -> void:
 		is_exploded = true
 		animation_player.play("throw acid")
 		Inventory.subtract("Explosive Acid")
+
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	if body == player:
+		get_tree().change_scene_to_file("res://Scenes/career_choice.tscn")

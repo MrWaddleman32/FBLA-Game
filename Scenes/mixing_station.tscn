@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://vm2c16kpy36"]
+[gd_scene load_steps=7 format=3 uid="uid://vm2c16kpy36"]
 
 [ext_resource type="Texture2D" uid="uid://veep0slh33cm" path="res://Button Sprites/Panel.png" id="1_h1h1t"]
 [ext_resource type="Script" uid="uid://bl74k6utty2nd" path="res://Scripts/mixing_station.gd" id="1_nphra"]
 [ext_resource type="FontFile" uid="uid://dqb5ri464p1od" path="res://Fonts/PressStart2P-Regular.ttf" id="3_1mhy1"]
+[ext_resource type="PackedScene" uid="uid://db8bvmwcxvhdf" path="res://Scenes/ui_overlay_manager.tscn" id="4_k8woc"]
 
 [sub_resource type="FontVariation" id="FontVariation_g7bs0"]
 base_font = ExtResource("3_1mhy1")
@@ -159,6 +160,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="UI_Overlay_Manager" parent="." instance=ExtResource("4_k8woc")]
 
 [connection signal="item_clicked" from="CanvasLayer/TextureRect/ItemList" to="." method="_on_item_list_item_clicked"]
 [connection signal="pressed" from="CanvasLayer/TextureRect/Reactant 1" to="." method="_on_reactant_1_pressed"]

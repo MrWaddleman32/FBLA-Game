@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://bi6x8wgiqdpq0"]
+
+[ext_resource type="FontFile" uid="uid://dqb5ri464p1od" path="res://Fonts/PressStart2P-Regular.ttf" id="1_h5ax8"]
+[ext_resource type="Script" uid="uid://cstiudaxug5aw" path="res://Scripts/thanks_screen.gd" id="1_us02v"]
+[ext_resource type="Texture2D" uid="uid://bib6kyyw8wnbg" path="res://Button Sprites/retrybutton.png" id="3_cmxm5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_evddv"]
+font = ExtResource("1_h5ax8")
+font_size = 66
+
+[node name="Thanks screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_us02v")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.02578125
+anchor_top = 0.20972222
+anchor_right = 0.9742187
+anchor_bottom = 0.7902778
+grow_horizontal = 2
+grow_vertical = 2
+text = "Thank you for playing Felix's Future - Ananth Vasishta, Srikar Muthyala, and Ramon Nunez"
+label_settings = SubResource("LabelSettings_evddv")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4296875
+anchor_top = 0.82361114
+anchor_right = 0.5734375
+anchor_bottom = 0.87916666
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("3_cmxm5")
+stretch_mode = 6
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

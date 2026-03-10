@@ -1,12 +1,15 @@
-[gd_scene load_steps=31 format=3 uid="uid://cu55pejndo8j3"]
+[gd_scene load_steps=41 format=3 uid="uid://cu55pejndo8j3"]
 
 [ext_resource type="Script" uid="uid://dxjmwdlj5dcrl" path="res://Scripts/player.gd" id="1_iwpo4"]
 [ext_resource type="ArrayMesh" uid="uid://dyp04eqo7q7md" path="res://Models/PlayerModels/CharacterSprite2.vox.obj" id="2_fb3t6"]
 [ext_resource type="ArrayMesh" uid="uid://budhl2oqmvuci" path="res://Models/PlayerModels/CharacterSpriteIdle.vox.obj" id="3_c7tqt"]
+[ext_resource type="ArrayMesh" uid="uid://kvquq662oaii" path="res://Models/TileModels/Medicman.vox.obj" id="3_p4upn"]
 [ext_resource type="ArrayMesh" uid="uid://c7rgtjqnbgawt" path="res://Models/PlayerModels/CharacterSprite1.vox.obj" id="3_vd578"]
-[ext_resource type="ArrayMesh" uid="uid://dg6t2ytal2dky" path="res://Models/TileModels/Builderman.vox.obj" id="5_3yrqx"]
+[ext_resource type="ArrayMesh" uid="uid://dg6t2ytal2dky" path="res://Models/TileModels/Builderman.vox.obj" id="3_x0ixa"]
 [ext_resource type="ArrayMesh" uid="uid://t71pknqrvmk2" path="res://Models/TileModels/Builder_Walk2.vox.obj" id="6_6lwhy"]
 [ext_resource type="ArrayMesh" uid="uid://bslo18pl6ajul" path="res://Models/TileModels/Builder_Walk1.vox.obj" id="7_p4upn"]
+[ext_resource type="ArrayMesh" uid="uid://bchugh8j0xx30" path="res://Models/TileModels/Medic_Walk1.vox.obj" id="8_x0ixa"]
+[ext_resource type="ArrayMesh" uid="uid://cveo6asndwl0b" path="res://Models/TileModels/Medic_Walk2.vox.obj" id="9_socri"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fb3t6"]
 size = Vector3(0.7846527, 1.281127, 0.96673393)
@@ -43,7 +46,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("5_3yrqx")]
+"values": [ExtResource("3_x0ixa")]
 }
 
 [sub_resource type="Animation" id="Animation_socri"]
@@ -75,6 +78,37 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [ExtResource("3_c7tqt")]
+}
+
+[sub_resource type="Animation" id="Animation_alkdh"]
+resource_name = "MedicalIdle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:mesh")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_p4upn")]
+}
+
+[sub_resource type="Animation" id="Animation_kv8is"]
+resource_name = "MedicalWalk"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:mesh")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.79999995, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("8_x0ixa"), ExtResource("9_socri"), ExtResource("8_x0ixa"), ExtResource("9_socri"), ExtResource("8_x0ixa"), ExtResource("9_socri")]
 }
 
 [sub_resource type="Animation" id="Animation_nl27k"]
@@ -113,6 +147,8 @@ _data = {
 &"EngineeringIdle": SubResource("Animation_x0ixa"),
 &"EngineeringWalk": SubResource("Animation_socri"),
 &"Idle": SubResource("Animation_fb3t6"),
+&"MedicalIdle": SubResource("Animation_alkdh"),
+&"MedicalWalk": SubResource("Animation_kv8is"),
 &"RESET": SubResource("Animation_nl27k"),
 &"Walk": SubResource("Animation_c7tqt")
 }
@@ -125,6 +161,12 @@ animation = &"EngineeringWalk"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vd578"]
 animation = &"Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_p4upn"]
+animation = &"MedicalIdle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_x0ixa"]
+animation = &"MedicalWalk"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c7tqt"]
 animation = &"Walk"
@@ -143,7 +185,7 @@ advance_expression = "get_tree().current_scene.name == \"BegCutScene\""
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kv8is"]
 advance_mode = 2
-advance_expression = "get_tree().current_scene.name == \"Engineering World\""
+advance_expression = "get_tree().current_scene.name == \"Engineering World\" or get_tree().current_scene.name == \"Engineering Career\""
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6lwhy"]
 advance_mode = 2
@@ -153,18 +195,34 @@ advance_condition = &"is_moving"
 advance_mode = 2
 advance_condition = &"is_idle"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_socri"]
+advance_mode = 2
+advance_expression = "get_tree().current_scene.name == \"Medical World 1\" or get_tree().current_scene.name == \"Medical World 2\" or get_tree().current_scene.name == \"Medical World 3\" or get_tree().current_scene.name == \"Medical Career\" or get_tree().current_scene.name == \"Scientist Career\" or get_tree().current_scene.name.begins_with(\"Science\")"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_alkdh"]
+advance_mode = 2
+advance_condition = &"is_moving"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_12npg"]
+advance_mode = 2
+advance_condition = &"is_idle"
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_1igb4"]
 states/EngineeringIdle/node = SubResource("AnimationNodeAnimation_alkdh")
-states/EngineeringIdle/position = Vector2(400.26025, 176)
+states/EngineeringIdle/position = Vector2(401.01025, 176.5)
 states/EngineeringWalk/node = SubResource("AnimationNodeAnimation_3yrqx")
 states/EngineeringWalk/position = Vector2(783.26025, 224)
 states/Idle/node = SubResource("AnimationNodeAnimation_vd578")
 states/Idle/position = Vector2(319.26025, 47.5)
-states/Start/position = Vector2(202, 100.125)
+states/MedicalIdle/node = SubResource("AnimationNodeAnimation_p4upn")
+states/MedicalIdle/position = Vector2(219.76024, 239.5)
+states/MedicalWalk/node = SubResource("AnimationNodeAnimation_x0ixa")
+states/MedicalWalk/position = Vector2(401.26025, 305)
+states/Start/position = Vector2(202, 100.0625)
 states/Walk/node = SubResource("AnimationNodeAnimation_c7tqt")
 states/Walk/position = Vector2(460.26025, 82)
-transitions = ["Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_nl27k"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_obynr"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_jvo56"), "Start", "EngineeringIdle", SubResource("AnimationNodeStateMachineTransition_kv8is"), "EngineeringIdle", "EngineeringWalk", SubResource("AnimationNodeStateMachineTransition_6lwhy"), "EngineeringWalk", "EngineeringIdle", SubResource("AnimationNodeStateMachineTransition_p4upn")]
-graph_offset = Vector2(56.26024, 0)
+transitions = ["Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_nl27k"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_obynr"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_jvo56"), "Start", "EngineeringIdle", SubResource("AnimationNodeStateMachineTransition_kv8is"), "EngineeringIdle", "EngineeringWalk", SubResource("AnimationNodeStateMachineTransition_6lwhy"), "EngineeringWalk", "EngineeringIdle", SubResource("AnimationNodeStateMachineTransition_p4upn"), "Start", "MedicalIdle", SubResource("AnimationNodeStateMachineTransition_socri"), "MedicalIdle", "MedicalWalk", SubResource("AnimationNodeStateMachineTransition_alkdh"), "MedicalWalk", "MedicalIdle", SubResource("AnimationNodeStateMachineTransition_12npg")]
+graph_offset = Vector2(96.26024, 120)
 
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("camera_pivot", "camera") groups=["Player"]]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)

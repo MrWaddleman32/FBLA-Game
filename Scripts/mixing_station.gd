@@ -14,6 +14,7 @@ const BEAKER_5 = preload("uid://bixav4d84lr7")
 var dragged_texture: Texture2D = null
 var drag_icon: TextureRect = null
 var dragging := false
+@onready var ui_overlay_manager: Node3D = $UI_Overlay_Manager
 
 
 
@@ -22,6 +23,9 @@ func _ready() -> void:
 	item_list.add_item("Hydrochloric Acid", BEAKER_2)
 	item_list.add_item("Sulfuric Acid", BEAKER_3)
 	item_list.add_item("Baking Soda", BEAKER_4)
+	ui_overlay_manager.turn_on_hint_text()
+	ui_overlay_manager.turn_off_instruction_text()
+	ui_overlay_manager.change_hint_text("H2SO4 + HNO3")
 
 
 func _process(delta: float) -> void:
@@ -83,4 +87,4 @@ func _on_solution_pressed() -> void:
 	if solution.texture_normal == BEAKER_5:
 		Inventory.add("Explosive Acid")
 		CutsceneManager.wait(2)
-		get_tree().change_scene_to_file("res://science_world_2.tscn")
+		get_tree().change_scene_to_file("res://Scenes/science_world_2.tscn")

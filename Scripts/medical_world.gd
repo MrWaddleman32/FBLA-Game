@@ -11,6 +11,7 @@ func _ready() -> void:
 	await get_tree().process_frame
 	Inventory.inventory.clear()
 	player.can_move = false
+	player.velocity = Vector3(0,0,0)
 	CutsceneManager.turn_on_UI()
 	CutsceneManager.change_text("Now we will learn about the medical field")
 	await CutsceneManager.wait(3)
