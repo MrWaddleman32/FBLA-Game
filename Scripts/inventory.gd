@@ -7,6 +7,7 @@ const WOOD_PREVIEW_2 = preload("uid://bqwr0i4232hdn")
 const STICK = preload("uid://d2jg5r04sheeu")
 const LADDER = preload("uid://blv3wb5fjx5xa")
 const KEY = preload("uid://v1f0twmh8875")
+const BEAKER_5 = preload("uid://bixav4d84lr7")
 
 
 @onready var item_1: TextureRect = $CanvasLayer/GridContainer/Item1
@@ -25,7 +26,8 @@ var item_img = []
 var count_lbl = []
 
 var inventory = []
-var items = {"Wood": TREE_LOG, "Planks": WOOD_PREVIEW_2, "Stick": STICK, "Ladder" : LADDER, "Key" : KEY}
+var items = {"Wood": TREE_LOG, "Planks": WOOD_PREVIEW_2, "Stick": STICK, "Ladder" : LADDER, "Key" : KEY,\
+"Explosive Acid": BEAKER_5}
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	item_img = [item_1, item_2, item_3, item_4, item_5]
@@ -65,6 +67,6 @@ func update_items_and_count():
 		if i < len(item_and_count.keys()):
 			item_img[i].texture = items[item_and_count.keys()[i]]
 			count_lbl[i].text = str(item_and_count[item_and_count.keys()[i]])
-		else:
+		elif i < len(item_img):
 			item_img[i].texture = null
 			count_lbl[i].text = ""

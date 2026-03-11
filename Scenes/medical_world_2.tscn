@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://b4s2l0kth0rc4"]
 
-[ext_resource type="Script" uid="uid://cuv4epb44nmxw" path="res://Scripts/medical_world_2.gd" id="1_0bhed"]
+[ext_resource type="Script" path="res://Scripts/medical_world_2.gd" id="1_0bhed"]
 [ext_resource type="MeshLibrary" uid="uid://cud60ti3qvr6b" path="res://Models/Tilemesh/Hospital.tres" id="1_86pes"]
 [ext_resource type="ArrayMesh" uid="uid://bl38t7jj23ed5" path="res://Models/TileModels/Occupied_Chair.vox.obj" id="2_0bhed"]
 [ext_resource type="PackedScene" uid="uid://cu55pejndo8j3" path="res://Scenes/character_body_3d.tscn" id="3_xeerf"]
@@ -9,29 +9,14 @@
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 
-[sub_resource type="Sky" id="Sky_k4bm6"]
+[sub_resource type="Sky" id="Sky_0bhed"]
 sky_material = SubResource("ProceduralSkyMaterial_xeerf")
 
 [sub_resource type="Environment" id="Environment_uyiji"]
 background_mode = 2
-sky = SubResource("Sky_k4bm6")
+sky = SubResource("Sky_0bhed")
 tonemap_mode = 2
 glow_enabled = true
-
-[sub_resource type="Animation" id="Animation_0bhed"]
-resource_name = "fade in"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_xeerf"]
 length = 0.001
@@ -74,6 +59,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(8.939835, 5.352849, 30.855375), Vector3(7.965, 1.888, 30.63)]
+}
+
+[sub_resource type="Animation" id="Animation_0bhed"]
+resource_name = "fade in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k4bm6"]
@@ -119,6 +119,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 

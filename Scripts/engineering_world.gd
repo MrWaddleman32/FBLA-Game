@@ -192,3 +192,8 @@ func _on_ladder_place_body_entered(body: Node3D) -> void:
 func _on_ladder_place_body_exited(body: Node3D) -> void:
 	can_place_ladder = false
 	ui_overlay_manager.turn_off_hint_text()
+
+
+func _on_tp_to_main_body_entered(body: Node3D) -> void:
+	if body == player:
+		get_tree().change_scene_to_file("res://Scenes/medical_world.tscn")

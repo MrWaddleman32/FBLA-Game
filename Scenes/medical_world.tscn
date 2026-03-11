@@ -26,6 +26,21 @@ _data = {
 }
 point_count = 7
 
+[sub_resource type="Animation" id="Animation_yikl6"]
+resource_name = "Falling Down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OldMan:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 3.1415927, 0), Vector3(-1.5707964, 3.1415927, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_11ciw"]
 resource_name = "Follow Path"
 length = 7.0
@@ -81,21 +96,6 @@ tracks/2/keys = {
 "values": [Color(0, 0, 0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_yikl6"]
-resource_name = "Falling Down"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("OldMan:rotation")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 3.1415927, 0), Vector3(-1.5707964, 3.1415927, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_6rqvf"]
 resource_name = "fade out"
 tracks/0/type = "value"
@@ -148,7 +148,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 curve = SubResource("Curve3D_sgfl1")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(-0.99991024, 0, -0.01234117, 0, 1, 0, 0.01234117, 0, -0.99991024, 4.495172, 0, 8.409108)
+transform = Transform3D(-0.9999097, 0, -0.012341163, 0, 1, 0, 0.012341163, 0, -0.9999097, 4.495172, 0, 8.409108)
 
 [node name="OldMan" parent="Path3D/PathFollow3D" instance=ExtResource("4_gjjes")]
 transform = Transform3D(-1.495, 0, -1.3069705e-07, 0, 1.495, 0, 1.3069705e-07, 0, -1.495, 0, 0, 0)
@@ -176,6 +176,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 0)
 metadata/_edit_use_anchors_ = true
 

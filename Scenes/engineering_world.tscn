@@ -2,15 +2,15 @@
 
 [ext_resource type="Script" uid="uid://dersj2354cags" path="res://Scripts/engineering_world.gd" id="1_acmio"]
 [ext_resource type="PackedScene" uid="uid://cu55pejndo8j3" path="res://Scenes/character_body_3d.tscn" id="1_kmu22"]
-[ext_resource type="MeshLibrary" uid="uid://dwog7r3lg6c8q" path="res://School+Lab_Tiles.tres" id="3_6np30"]
+[ext_resource type="MeshLibrary" uid="uid://dwog7r3lg6c8q" path="res://Models/Tilemesh/School+Lab_Tiles.tres" id="3_6np30"]
 [ext_resource type="PackedScene" uid="uid://bxnpi315xnmmk" path="res://Scenes/OldMan.tscn" id="3_ihxk4"]
-[ext_resource type="PackedScene" path="res://Scenes/ui_overlay_manager.tscn" id="5_qib6p"]
+[ext_resource type="PackedScene" uid="uid://db8bvmwcxvhdf" path="res://Scenes/ui_overlay_manager.tscn" id="5_qib6p"]
 [ext_resource type="FontFile" uid="uid://dqb5ri464p1od" path="res://Fonts/PressStart2P-Regular.ttf" id="6_cyhdl"]
 [ext_resource type="ArrayMesh" uid="uid://dbb5q1k5m33ao" path="res://Models/TileModels/Hammer.obj" id="7_naq0m"]
 [ext_resource type="ArrayMesh" uid="uid://rlfbs5e0yf8g" path="res://Models/TileModels/nail.obj" id="8_1vbv0"]
 [ext_resource type="ArrayMesh" uid="uid://dm3oybieek5mq" path="res://Models/TileModels/Tree_Log.vox.obj" id="9_6np30"]
 [ext_resource type="ArrayMesh" uid="uid://unt3mqkcy0me" path="res://Models/TileModels/Stick.obj" id="10_1vbv0"]
-[ext_resource type="PackedScene" path="res://Scenes/ladder.tscn" id="11_6np30"]
+[ext_resource type="PackedScene" uid="uid://hpsygy4cycm8" path="res://Scenes/ladder.tscn" id="11_6np30"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4ov6g"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -24,11 +24,6 @@ background_mode = 2
 sky = SubResource("Sky_lt0k2")
 tonemap_mode = 2
 glow_enabled = true
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_kmu22"]
-size = Vector3(1.857666, 1.6512451, 1)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_4ov6g"]
 
 [sub_resource type="Curve3D" id="Curve3D_acmio"]
 _data = {
@@ -755,6 +750,11 @@ text = "Place Ladder here"
 font = ExtResource("6_cyhdl")
 font_size = 31
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_kmu22"]
+size = Vector3(1.857666, 1.6512451, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4ov6g"]
+
 [node name="Engineering World" type="Node3D"]
 script = ExtResource("1_acmio")
 
@@ -767,17 +767,6 @@ shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_kmu22")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.40231764, 1.4127656, 0.10697675)
-
-[node name="TPToMain" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7471918, 0, -12.39326)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TPToMain"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1282959, 0.32562256, 0)
-shape = SubResource("BoxShape3D_kmu22")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="TPToMain"]
-transform = Transform3D(1, 0, 0, 0, 0.05397421, -0.9985423, 0, 0.9985423, 0.05397421, 0, 0, 0)
-mesh = SubResource("PlaneMesh_4ov6g")
 
 [node name="GridMap" type="GridMap" parent="."]
 mesh_library = ExtResource("3_6np30")
@@ -792,10 +781,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 curve = SubResource("Curve3D_acmio")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(-0.9999561, 0, -0.002385667, 0, 1, 0, 0.002385667, 0, -0.9999561, -0.03250584, 0, 2.375716)
+transform = Transform3D(-0.99995595, 0, -0.0023856668, 0, 1, 0, 0.0023856668, 0, -0.99995595, -0.03250584, 0, 2.375716)
 
 [node name="Teacher" parent="Path3D/PathFollow3D" instance=ExtResource("3_ihxk4")]
-transform = Transform3D(-1.2098233, 0, 0.02068308, 0, 1.21, 0, -0.02068308, 0, -1.2098233, 0, 0, 1.375)
+transform = Transform3D(-1.495, 0, 1.3108365e-07, 0, 1.495, 0, -1.3108365e-07, 0, -1.495, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Path3D/PathFollow3D"]
 libraries = {
@@ -950,7 +939,17 @@ mesh = SubResource("TextMesh_ii3ut")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07739508, -0.104984045, 1.5972843)
 visible = false
 
-[connection signal="body_entered" from="TPToMain" to="Player" method="_on_tp_to_main_body_entered"]
+[node name="TPToMain" type="Area3D" parent="."]
+transform = Transform3D(-2.01, 0, 3.0350157e-07, 0, 2.01, 0, -3.0350157e-07, 0, -2.01, -1.7471918, 7, 23.606739)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TPToMain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1282959, 0.32562256, 0)
+shape = SubResource("BoxShape3D_kmu22")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TPToMain"]
+transform = Transform3D(1, 0, 0, 0, 0.05397421, -0.9985423, 0, 0.9985423, 0.05397421, 0, 0, 0)
+mesh = SubResource("PlaneMesh_4ov6g")
+
 [connection signal="body_entered" from="Area3D" to="." method="engineering_cs_pt2"]
 [connection signal="body_entered" from="WoodPlace" to="." method="_on_wood_place_body_entered"]
 [connection signal="body_exited" from="WoodPlace" to="." method="_on_wood_place_body_exited"]
@@ -962,3 +961,4 @@ visible = false
 [connection signal="body_exited" from="Building station" to="." method="_on_building_station_body_exited"]
 [connection signal="body_entered" from="Ladder Place" to="." method="_on_ladder_place_body_entered"]
 [connection signal="body_exited" from="Ladder Place" to="." method="_on_ladder_place_body_exited"]
+[connection signal="body_entered" from="TPToMain" to="." method="_on_tp_to_main_body_entered"]

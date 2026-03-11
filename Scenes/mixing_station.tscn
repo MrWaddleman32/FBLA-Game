@@ -1,0 +1,169 @@
+[gd_scene load_steps=7 format=3 uid="uid://vm2c16kpy36"]
+
+[ext_resource type="Texture2D" uid="uid://veep0slh33cm" path="res://Button Sprites/Panel.png" id="1_h1h1t"]
+[ext_resource type="Script" uid="uid://bl74k6utty2nd" path="res://Scripts/mixing_station.gd" id="1_nphra"]
+[ext_resource type="FontFile" uid="uid://dqb5ri464p1od" path="res://Fonts/PressStart2P-Regular.ttf" id="3_1mhy1"]
+[ext_resource type="PackedScene" uid="uid://db8bvmwcxvhdf" path="res://Scenes/ui_overlay_manager.tscn" id="4_k8woc"]
+
+[sub_resource type="FontVariation" id="FontVariation_g7bs0"]
+base_font = ExtResource("3_1mhy1")
+
+[sub_resource type="LabelSettings" id="LabelSettings_1mhy1"]
+font_size = 76
+font_color = Color(0, 0, 0, 1)
+
+[node name="Mixing Station" type="Node2D"]
+script = ExtResource("1_nphra")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_h1h1t")
+expand_mode = 3
+
+[node name="ItemList" type="ItemList" parent="CanvasLayer/TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.194
+anchor_top = 0.702
+anchor_right = 0.80600005
+anchor_bottom = 0.855
+offset_left = -0.18403625
+offset_top = 0.07199097
+offset_right = 0.18395996
+offset_bottom = -0.22000122
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 164
+theme_override_fonts/font = SubResource("FontVariation_g7bs0")
+theme_override_font_sizes/font_size = 26
+auto_width = true
+auto_height = true
+max_columns = 4
+icon_mode = 0
+icon_scale = 3.0
+
+[node name="Reactant 1" type="TextureButton" parent="CanvasLayer/TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.24000001
+anchor_top = 0.187
+anchor_right = 0.323
+anchor_bottom = 0.335
+offset_left = -0.2000122
+offset_top = 0.3600006
+offset_right = -0.44000244
+offset_bottom = -0.2000122
+grow_horizontal = 2
+grow_vertical = 2
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/TextureRect/Reactant 1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Reactant 2" type="TextureButton" parent="CanvasLayer/TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.48000002
+anchor_top = 0.187
+anchor_right = 0.56200004
+anchor_bottom = 0.335
+offset_left = -0.4000244
+offset_top = 0.3600006
+offset_right = 0.6399536
+offset_bottom = -0.2000122
+grow_horizontal = 2
+grow_vertical = 2
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/TextureRect/Reactant 2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.37600002
+anchor_top = 0.187
+anchor_right = 0.45100003
+anchor_bottom = 0.333
+offset_left = -0.2800293
+offset_top = 0.3600006
+offset_right = -0.2800293
+offset_bottom = 0.23999023
+grow_horizontal = 2
+grow_vertical = 2
+text = "+"
+label_settings = SubResource("LabelSettings_1mhy1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.609
+anchor_top = 0.187
+anchor_right = 0.684
+anchor_bottom = 0.333
+offset_left = -0.52001953
+offset_top = 0.3600006
+offset_right = -0.52001953
+offset_bottom = 0.23999023
+grow_horizontal = 2
+grow_vertical = 2
+text = "="
+label_settings = SubResource("LabelSettings_1mhy1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Solution" type="TextureButton" parent="CanvasLayer/TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.72300005
+anchor_top = 0.187
+anchor_right = 0.80600005
+anchor_bottom = 0.335
+offset_left = 0.5599365
+offset_top = 0.3600006
+offset_right = 0.3199463
+offset_bottom = -0.2000122
+grow_horizontal = 2
+grow_vertical = 2
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/TextureRect/Solution"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="UI_Overlay_Manager" parent="." instance=ExtResource("4_k8woc")]
+
+[connection signal="item_clicked" from="CanvasLayer/TextureRect/ItemList" to="." method="_on_item_list_item_clicked"]
+[connection signal="pressed" from="CanvasLayer/TextureRect/Reactant 1" to="." method="_on_reactant_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/TextureRect/Reactant 2" to="." method="_on_reactant_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/TextureRect/Solution" to="." method="_on_solution_pressed"]

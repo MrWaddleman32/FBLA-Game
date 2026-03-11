@@ -15,8 +15,3 @@ func _ready() -> void:
 	animation_player.play("fade in", -1, -1, true)
 	await CutsceneManager.wait(1)
 	get_tree().change_scene_to_file("res://Scenes/inside_mouth.tscn")
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
