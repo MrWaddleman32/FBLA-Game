@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dav25spu2ul3g"
 path.s3tc="res://.godot/imported/Chalkboard.vox.png-8d10c7b1ba122e1c7d615da301fad6b9.s3tc.ctex"
+path.etc2="res://.godot/imported/Chalkboard.vox.png-8d10c7b1ba122e1c7d615da301fad6b9.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Models/TileModels/Chalkboard.vox.png"
-dest_files=["res://.godot/imported/Chalkboard.vox.png-8d10c7b1ba122e1c7d615da301fad6b9.s3tc.ctex"]
+dest_files=["res://.godot/imported/Chalkboard.vox.png-8d10c7b1ba122e1c7d615da301fad6b9.s3tc.ctex", "res://.godot/imported/Chalkboard.vox.png-8d10c7b1ba122e1c7d615da301fad6b9.etc2.ctex"]
 
 [params]
 

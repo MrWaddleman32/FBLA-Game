@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c6y2s3ngdk31a"
 path.bptc="res://.godot/imported/Medicman.vox.png-cdb4877615c2f7f710ea0f3f20da2b17.bptc.ctex"
+path.astc="res://.godot/imported/Medicman.vox.png-cdb4877615c2f7f710ea0f3f20da2b17.astc.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Models/TileModels/Medicman.vox.png"
-dest_files=["res://.godot/imported/Medicman.vox.png-cdb4877615c2f7f710ea0f3f20da2b17.bptc.ctex"]
+dest_files=["res://.godot/imported/Medicman.vox.png-cdb4877615c2f7f710ea0f3f20da2b17.bptc.ctex", "res://.godot/imported/Medicman.vox.png-cdb4877615c2f7f710ea0f3f20da2b17.astc.ctex"]
 
 [params]
 

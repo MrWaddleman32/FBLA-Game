@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://d24u7r05jkp4v"
 path.s3tc="res://.godot/imported/Builder_Walk1.vox.png-655d4292517b2e21c25b8246f74c060d.s3tc.ctex"
+path.etc2="res://.godot/imported/Builder_Walk1.vox.png-655d4292517b2e21c25b8246f74c060d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Models/PlayerModels/Builder_Walk1.vox.png"
-dest_files=["res://.godot/imported/Builder_Walk1.vox.png-655d4292517b2e21c25b8246f74c060d.s3tc.ctex"]
+dest_files=["res://.godot/imported/Builder_Walk1.vox.png-655d4292517b2e21c25b8246f74c060d.s3tc.ctex", "res://.godot/imported/Builder_Walk1.vox.png-655d4292517b2e21c25b8246f74c060d.etc2.ctex"]
 
 [params]
 

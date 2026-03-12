@@ -22,6 +22,33 @@ points = PackedVector3Array(0.74992657, 1.1875, 0.1875, 0.9374999, 0.8749327, 0.
 [sub_resource type="BoxShape3D" id="BoxShape3D_bjscm"]
 size = Vector3(3.3944702, 1.295044, 1)
 
+[sub_resource type="Animation" id="Animation_xnnn7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.2617994, -3.1415927, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_1gtoo"]
 resource_name = "new_animation"
 length = 2.0
@@ -48,33 +75,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_xnnn7"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Player:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.2617994, -3.1415927, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayer/ColorRect:color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sjkoa"]
@@ -157,10 +157,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 3.61, -5.85)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.61, -5.85)
 
 [node name="Player" parent="." instance=ExtResource("5_sjkoa")]
-transform = Transform3D(-0.5, 1.1313339e-08, 4.2221956e-08, 0, 0.48296288, -0.1294095, -4.371139e-08, -0.1294095, -0.48296288, -4, 1.4281772, -6.8393283)
+transform = Transform3D(-0.5, 1.1313338e-08, 4.2221956e-08, 0, 0.48296285, -0.1294095, -4.371139e-08, -0.1294095, -0.48296285, -4, 1.4281772, -6.8393283)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-0.06116036, 0.48915413, -0.8700504, 0.03430054, 0.8721974, 0.48795003, 0.9975384, 0, -0.07012215, -7.0540843, 3.45736, -7.7943964)
+current = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(-0.5, 0, -4.371139e-08, 0, 0.5, 0, 4.371139e-08, 0, -0.5, -4, 1, -6.9276395)

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bhfr8fti7oaro"
 path.s3tc="res://.godot/imported/Spilled_Beaker.vox.png-2c79509b89a06b42c1f962f5efaff431.s3tc.ctex"
+path.etc2="res://.godot/imported/Spilled_Beaker.vox.png-2c79509b89a06b42c1f962f5efaff431.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Models/TileModels/Spilled_Beaker.vox.png"
-dest_files=["res://.godot/imported/Spilled_Beaker.vox.png-2c79509b89a06b42c1f962f5efaff431.s3tc.ctex"]
+dest_files=["res://.godot/imported/Spilled_Beaker.vox.png-2c79509b89a06b42c1f962f5efaff431.s3tc.ctex", "res://.godot/imported/Spilled_Beaker.vox.png-2c79509b89a06b42c1f962f5efaff431.etc2.ctex"]
 
 [params]
 

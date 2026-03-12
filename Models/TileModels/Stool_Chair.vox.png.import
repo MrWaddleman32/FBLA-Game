@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bxtffywdkq8xj"
 path.s3tc="res://.godot/imported/Stool_Chair.vox.png-066afbc706a455e97e4d9c6fd9468cbe.s3tc.ctex"
+path.etc2="res://.godot/imported/Stool_Chair.vox.png-066afbc706a455e97e4d9c6fd9468cbe.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Models/TileModels/Stool_Chair.vox.png"
-dest_files=["res://.godot/imported/Stool_Chair.vox.png-066afbc706a455e97e4d9c6fd9468cbe.s3tc.ctex"]
+dest_files=["res://.godot/imported/Stool_Chair.vox.png-066afbc706a455e97e4d9c6fd9468cbe.s3tc.ctex", "res://.godot/imported/Stool_Chair.vox.png-066afbc706a455e97e4d9c6fd9468cbe.etc2.ctex"]
 
 [params]
 

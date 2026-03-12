@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cyilc3ii3i8de"
 path.s3tc="res://.godot/imported/Babyboo_Door.vox.png-84e639adf85d0b4b3ef7c34ead887f39.s3tc.ctex"
+path.etc2="res://.godot/imported/Babyboo_Door.vox.png-84e639adf85d0b4b3ef7c34ead887f39.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Models/TileModels/Babyboo_Door.vox.png"
-dest_files=["res://.godot/imported/Babyboo_Door.vox.png-84e639adf85d0b4b3ef7c34ead887f39.s3tc.ctex"]
+dest_files=["res://.godot/imported/Babyboo_Door.vox.png-84e639adf85d0b4b3ef7c34ead887f39.s3tc.ctex", "res://.godot/imported/Babyboo_Door.vox.png-84e639adf85d0b4b3ef7c34ead887f39.etc2.ctex"]
 
 [params]
 

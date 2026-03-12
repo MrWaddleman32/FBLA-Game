@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cg76qeegp5ruj"
 path.s3tc="res://.godot/imported/Window.vox.png-999c5c122a135ce0c990c227c09840e8.s3tc.ctex"
+path.etc2="res://.godot/imported/Window.vox.png-999c5c122a135ce0c990c227c09840e8.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Models/TileModels/Window.vox.png"
-dest_files=["res://.godot/imported/Window.vox.png-999c5c122a135ce0c990c227c09840e8.s3tc.ctex"]
+dest_files=["res://.godot/imported/Window.vox.png-999c5c122a135ce0c990c227c09840e8.s3tc.ctex", "res://.godot/imported/Window.vox.png-999c5c122a135ce0c990c227c09840e8.etc2.ctex"]
 
 [params]
 

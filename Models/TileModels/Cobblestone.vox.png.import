@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://xeeqwl26vd63"
 path.bptc="res://.godot/imported/Cobblestone.vox.png-7c6fe08480a19e30110ae372026732fd.bptc.ctex"
+path.astc="res://.godot/imported/Cobblestone.vox.png-7c6fe08480a19e30110ae372026732fd.astc.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Models/TileModels/Cobblestone.vox.png"
-dest_files=["res://.godot/imported/Cobblestone.vox.png-7c6fe08480a19e30110ae372026732fd.bptc.ctex"]
+dest_files=["res://.godot/imported/Cobblestone.vox.png-7c6fe08480a19e30110ae372026732fd.bptc.ctex", "res://.godot/imported/Cobblestone.vox.png-7c6fe08480a19e30110ae372026732fd.astc.ctex"]
 
 [params]
 

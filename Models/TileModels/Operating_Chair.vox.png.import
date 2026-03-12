@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bpghgdj33amnb"
 path.s3tc="res://.godot/imported/Operating_Chair.vox.png-d2d4b82bac118e9caeb1242a850d3331.s3tc.ctex"
+path.etc2="res://.godot/imported/Operating_Chair.vox.png-d2d4b82bac118e9caeb1242a850d3331.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Models/TileModels/Operating_Chair.vox.png"
-dest_files=["res://.godot/imported/Operating_Chair.vox.png-d2d4b82bac118e9caeb1242a850d3331.s3tc.ctex"]
+dest_files=["res://.godot/imported/Operating_Chair.vox.png-d2d4b82bac118e9caeb1242a850d3331.s3tc.ctex", "res://.godot/imported/Operating_Chair.vox.png-d2d4b82bac118e9caeb1242a850d3331.etc2.ctex"]
 
 [params]
 

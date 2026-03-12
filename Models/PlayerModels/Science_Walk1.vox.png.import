@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dg3smy2r7lsgm"
 path.s3tc="res://.godot/imported/Science_Walk1.vox.png-ecdb067def37f2d07301fba55535978f.s3tc.ctex"
+path.etc2="res://.godot/imported/Science_Walk1.vox.png-ecdb067def37f2d07301fba55535978f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Models/PlayerModels/Science_Walk1.vox.png"
-dest_files=["res://.godot/imported/Science_Walk1.vox.png-ecdb067def37f2d07301fba55535978f.s3tc.ctex"]
+dest_files=["res://.godot/imported/Science_Walk1.vox.png-ecdb067def37f2d07301fba55535978f.s3tc.ctex", "res://.godot/imported/Science_Walk1.vox.png-ecdb067def37f2d07301fba55535978f.etc2.ctex"]
 
 [params]
 

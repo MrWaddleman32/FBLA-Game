@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://beaxdidf4gopl"
 path.bptc="res://.godot/imported/CharacterSpriteIdle.vox.png-c12ef9ddd4f811093846e481f34a0cca.bptc.ctex"
+path.astc="res://.godot/imported/CharacterSpriteIdle.vox.png-c12ef9ddd4f811093846e481f34a0cca.astc.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Models/PlayerModels/CharacterSpriteIdle.vox.png"
-dest_files=["res://.godot/imported/CharacterSpriteIdle.vox.png-c12ef9ddd4f811093846e481f34a0cca.bptc.ctex"]
+dest_files=["res://.godot/imported/CharacterSpriteIdle.vox.png-c12ef9ddd4f811093846e481f34a0cca.bptc.ctex", "res://.godot/imported/CharacterSpriteIdle.vox.png-c12ef9ddd4f811093846e481f34a0cca.astc.ctex"]
 
 [params]
 

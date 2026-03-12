@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cvknmifw81tnk"
 path.bptc="res://.godot/imported/Grass_Block.vox.png-842a38809bd59ac172e6382adb4e7c7b.bptc.ctex"
+path.astc="res://.godot/imported/Grass_Block.vox.png-842a38809bd59ac172e6382adb4e7c7b.astc.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Models/TileModels/Grass_Block.vox.png"
-dest_files=["res://.godot/imported/Grass_Block.vox.png-842a38809bd59ac172e6382adb4e7c7b.bptc.ctex"]
+dest_files=["res://.godot/imported/Grass_Block.vox.png-842a38809bd59ac172e6382adb4e7c7b.bptc.ctex", "res://.godot/imported/Grass_Block.vox.png-842a38809bd59ac172e6382adb4e7c7b.astc.ctex"]
 
 [params]
 

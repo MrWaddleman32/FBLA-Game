@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cpc23gk75rute"
 path.bptc="res://.godot/imported/Ladder.vox.png-7eeec4aa782e92e7b036adac4f8ebfa8.bptc.ctex"
+path.astc="res://.godot/imported/Ladder.vox.png-7eeec4aa782e92e7b036adac4f8ebfa8.astc.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Models/TileModels/Ladder.vox.png"
-dest_files=["res://.godot/imported/Ladder.vox.png-7eeec4aa782e92e7b036adac4f8ebfa8.bptc.ctex"]
+dest_files=["res://.godot/imported/Ladder.vox.png-7eeec4aa782e92e7b036adac4f8ebfa8.bptc.ctex", "res://.godot/imported/Ladder.vox.png-7eeec4aa782e92e7b036adac4f8ebfa8.astc.ctex"]
 
 [params]
 

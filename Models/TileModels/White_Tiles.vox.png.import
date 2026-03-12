@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bs75i2helenpp"
 path.s3tc="res://.godot/imported/White_Tiles.vox.png-655e65f29726c425fad70c0d5d8bb70c.s3tc.ctex"
+path.etc2="res://.godot/imported/White_Tiles.vox.png-655e65f29726c425fad70c0d5d8bb70c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Models/TileModels/White_Tiles.vox.png"
-dest_files=["res://.godot/imported/White_Tiles.vox.png-655e65f29726c425fad70c0d5d8bb70c.s3tc.ctex"]
+dest_files=["res://.godot/imported/White_Tiles.vox.png-655e65f29726c425fad70c0d5d8bb70c.s3tc.ctex", "res://.godot/imported/White_Tiles.vox.png-655e65f29726c425fad70c0d5d8bb70c.etc2.ctex"]
 
 [params]
 

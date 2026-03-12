@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b8kbdnxbg3bdy"
 path.bptc="res://.godot/imported/Medic_Walk2.vox.png-32fb29f50ccbd8c27fbdaa428f26a37e.bptc.ctex"
+path.astc="res://.godot/imported/Medic_Walk2.vox.png-32fb29f50ccbd8c27fbdaa428f26a37e.astc.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Models/TileModels/Medic_Walk2.vox.png"
-dest_files=["res://.godot/imported/Medic_Walk2.vox.png-32fb29f50ccbd8c27fbdaa428f26a37e.bptc.ctex"]
+dest_files=["res://.godot/imported/Medic_Walk2.vox.png-32fb29f50ccbd8c27fbdaa428f26a37e.bptc.ctex", "res://.godot/imported/Medic_Walk2.vox.png-32fb29f50ccbd8c27fbdaa428f26a37e.astc.ctex"]
 
 [params]
 

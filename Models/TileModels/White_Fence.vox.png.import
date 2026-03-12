@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b532ij6k82ape"
 path.s3tc="res://.godot/imported/White_Fence.vox.png-36c9479b26c4a9c6de8d686740ce4136.s3tc.ctex"
+path.etc2="res://.godot/imported/White_Fence.vox.png-36c9479b26c4a9c6de8d686740ce4136.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Models/TileModels/White_Fence.vox.png"
-dest_files=["res://.godot/imported/White_Fence.vox.png-36c9479b26c4a9c6de8d686740ce4136.s3tc.ctex"]
+dest_files=["res://.godot/imported/White_Fence.vox.png-36c9479b26c4a9c6de8d686740ce4136.s3tc.ctex", "res://.godot/imported/White_Fence.vox.png-36c9479b26c4a9c6de8d686740ce4136.etc2.ctex"]
 
 [params]
 

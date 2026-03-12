@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://d3u357n1j7f50"
 path.s3tc="res://.godot/imported/Leaves.vox.png-d379ec41d8155534a645e1b93e9f405b.s3tc.ctex"
+path.etc2="res://.godot/imported/Leaves.vox.png-d379ec41d8155534a645e1b93e9f405b.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Models/TileModels/Leaves.vox.png"
-dest_files=["res://.godot/imported/Leaves.vox.png-d379ec41d8155534a645e1b93e9f405b.s3tc.ctex"]
+dest_files=["res://.godot/imported/Leaves.vox.png-d379ec41d8155534a645e1b93e9f405b.s3tc.ctex", "res://.godot/imported/Leaves.vox.png-d379ec41d8155534a645e1b93e9f405b.etc2.ctex"]
 
 [params]
 

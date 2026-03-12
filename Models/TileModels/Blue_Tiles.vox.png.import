@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b3adhh1dr2q56"
 path.s3tc="res://.godot/imported/Blue_Tiles.vox.png-5a315d5a5a9af54929b8cee8e6b89127.s3tc.ctex"
+path.etc2="res://.godot/imported/Blue_Tiles.vox.png-5a315d5a5a9af54929b8cee8e6b89127.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Models/TileModels/Blue_Tiles.vox.png"
-dest_files=["res://.godot/imported/Blue_Tiles.vox.png-5a315d5a5a9af54929b8cee8e6b89127.s3tc.ctex"]
+dest_files=["res://.godot/imported/Blue_Tiles.vox.png-5a315d5a5a9af54929b8cee8e6b89127.s3tc.ctex", "res://.godot/imported/Blue_Tiles.vox.png-5a315d5a5a9af54929b8cee8e6b89127.etc2.ctex"]
 
 [params]
 

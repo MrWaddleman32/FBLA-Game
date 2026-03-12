@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://brfoqk32uoefx"
 path.s3tc="res://.godot/imported/Teacher_Walk1.vox.png-d18c592d28dda2957198cc51adfcaf7f.s3tc.ctex"
+path.etc2="res://.godot/imported/Teacher_Walk1.vox.png-d18c592d28dda2957198cc51adfcaf7f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Models/TileModels/Teacher_Walk1.vox.png"
-dest_files=["res://.godot/imported/Teacher_Walk1.vox.png-d18c592d28dda2957198cc51adfcaf7f.s3tc.ctex"]
+dest_files=["res://.godot/imported/Teacher_Walk1.vox.png-d18c592d28dda2957198cc51adfcaf7f.s3tc.ctex", "res://.godot/imported/Teacher_Walk1.vox.png-d18c592d28dda2957198cc51adfcaf7f.etc2.ctex"]
 
 [params]
 

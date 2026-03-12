@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://db8bvmwcxvhdf"]
+[gd_scene load_steps=11 format=3 uid="uid://db8bvmwcxvhdf"]
 
 [ext_resource type="Script" uid="uid://djehob1awt3ak" path="res://Scripts/ui_overlay_manager.gd" id="1_n2ry3"]
 [ext_resource type="FontFile" uid="uid://dqb5ri464p1od" path="res://Fonts/PressStart2P-Regular.ttf" id="2_ppxak"]
@@ -15,6 +15,11 @@ font_size = 36
 [sub_resource type="LabelSettings" id="LabelSettings_a2xq5"]
 font = ExtResource("2_ppxak")
 font_size = 66
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_yuvy0"]
+font = ExtResource("2_ppxak")
+font_size = 36
 font_color = Color(0, 0, 0, 1)
 
 [node name="UI_Overlay_Manager" type="Node3D"]
@@ -193,11 +198,29 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.4
 anchor_top = 0.44444445
-anchor_right = 0.9484375
+anchor_right = 0.96015626
 anchor_bottom = 0.5638889
 grow_horizontal = 0
 grow_vertical = 2
+value = 75.0
 metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="CanvasLayer/Options Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.063
+anchor_top = 0.822
+anchor_right = 0.063
+anchor_bottom = 0.822
+offset_left = 0.3600006
+offset_top = -129.84003
+offset_right = 627.36
+offset_bottom = 0.15997314
+grow_vertical = 0
+text = "WASD To move and Arrow Keys to move the camera"
+label_settings = SubResource("LabelSettings_yuvy0")
+horizontal_alignment = 1
+autowrap_mode = 3
 
 [connection signal="pressed" from="CanvasLayer/Menu Panel/PlayBTN" to="." method="_on_play_btn_pressed"]
 [connection signal="pressed" from="CanvasLayer/Menu Panel/OptionsBTN" to="." method="_on_options_btn_pressed"]

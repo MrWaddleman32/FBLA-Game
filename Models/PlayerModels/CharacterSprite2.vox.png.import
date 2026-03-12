@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://du2w400qrj1k"
 path.bptc="res://.godot/imported/CharacterSprite2.vox.png-573cab77a37c5ba374ae0bc7518caf60.bptc.ctex"
+path.astc="res://.godot/imported/CharacterSprite2.vox.png-573cab77a37c5ba374ae0bc7518caf60.astc.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Models/PlayerModels/CharacterSprite2.vox.png"
-dest_files=["res://.godot/imported/CharacterSprite2.vox.png-573cab77a37c5ba374ae0bc7518caf60.bptc.ctex"]
+dest_files=["res://.godot/imported/CharacterSprite2.vox.png-573cab77a37c5ba374ae0bc7518caf60.bptc.ctex", "res://.godot/imported/CharacterSprite2.vox.png-573cab77a37c5ba374ae0bc7518caf60.astc.ctex"]
 
 [params]
 

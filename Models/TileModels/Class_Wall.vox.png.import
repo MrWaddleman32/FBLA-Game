@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dalnds8r4x23m"
 path.s3tc="res://.godot/imported/Class_Wall.vox.png-223251e0df999b014f22480bcd7e3af7.s3tc.ctex"
+path.etc2="res://.godot/imported/Class_Wall.vox.png-223251e0df999b014f22480bcd7e3af7.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Models/TileModels/Class_Wall.vox.png"
-dest_files=["res://.godot/imported/Class_Wall.vox.png-223251e0df999b014f22480bcd7e3af7.s3tc.ctex"]
+dest_files=["res://.godot/imported/Class_Wall.vox.png-223251e0df999b014f22480bcd7e3af7.s3tc.ctex", "res://.godot/imported/Class_Wall.vox.png-223251e0df999b014f22480bcd7e3af7.etc2.ctex"]
 
 [params]
 

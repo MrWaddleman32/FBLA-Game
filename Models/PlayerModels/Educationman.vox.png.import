@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c6pi22ifplug5"
 path.s3tc="res://.godot/imported/Educationman.vox.png-efae402f7448edd306ed931bcd2a4e91.s3tc.ctex"
+path.etc2="res://.godot/imported/Educationman.vox.png-efae402f7448edd306ed931bcd2a4e91.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Models/PlayerModels/Educationman.vox.png"
-dest_files=["res://.godot/imported/Educationman.vox.png-efae402f7448edd306ed931bcd2a4e91.s3tc.ctex"]
+dest_files=["res://.godot/imported/Educationman.vox.png-efae402f7448edd306ed931bcd2a4e91.s3tc.ctex", "res://.godot/imported/Educationman.vox.png-efae402f7448edd306ed931bcd2a4e91.etc2.ctex"]
 
 [params]
 

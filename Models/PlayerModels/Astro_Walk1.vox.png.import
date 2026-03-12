@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bnsxkxc4wor5c"
 path.s3tc="res://.godot/imported/Astro_Walk1.vox.png-62be24f6452c5e9019ae8a0fa1e93c6c.s3tc.ctex"
+path.etc2="res://.godot/imported/Astro_Walk1.vox.png-62be24f6452c5e9019ae8a0fa1e93c6c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Models/PlayerModels/Astro_Walk1.vox.png"
-dest_files=["res://.godot/imported/Astro_Walk1.vox.png-62be24f6452c5e9019ae8a0fa1e93c6c.s3tc.ctex"]
+dest_files=["res://.godot/imported/Astro_Walk1.vox.png-62be24f6452c5e9019ae8a0fa1e93c6c.s3tc.ctex", "res://.godot/imported/Astro_Walk1.vox.png-62be24f6452c5e9019ae8a0fa1e93c6c.etc2.ctex"]
 
 [params]
 

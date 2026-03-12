@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dxor58he4m615"
 path.s3tc="res://.godot/imported/Astronautman.vox.png-b6e4ced448712a41bdf08f9ea5c43049.s3tc.ctex"
+path.etc2="res://.godot/imported/Astronautman.vox.png-b6e4ced448712a41bdf08f9ea5c43049.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Models/PlayerModels/Astronautman.vox.png"
-dest_files=["res://.godot/imported/Astronautman.vox.png-b6e4ced448712a41bdf08f9ea5c43049.s3tc.ctex"]
+dest_files=["res://.godot/imported/Astronautman.vox.png-b6e4ced448712a41bdf08f9ea5c43049.s3tc.ctex", "res://.godot/imported/Astronautman.vox.png-b6e4ced448712a41bdf08f9ea5c43049.etc2.ctex"]
 
 [params]
 

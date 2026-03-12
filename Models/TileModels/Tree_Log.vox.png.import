@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ce3kij6wwhyx5"
 path.bptc="res://.godot/imported/Tree_Log.vox.png-1bc46a5bdbb69d72e55239477bf019d7.bptc.ctex"
+path.astc="res://.godot/imported/Tree_Log.vox.png-1bc46a5bdbb69d72e55239477bf019d7.astc.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Models/TileModels/Tree_Log.vox.png"
-dest_files=["res://.godot/imported/Tree_Log.vox.png-1bc46a5bdbb69d72e55239477bf019d7.bptc.ctex"]
+dest_files=["res://.godot/imported/Tree_Log.vox.png-1bc46a5bdbb69d72e55239477bf019d7.bptc.ctex", "res://.godot/imported/Tree_Log.vox.png-1bc46a5bdbb69d72e55239477bf019d7.astc.ctex"]
 
 [params]
 

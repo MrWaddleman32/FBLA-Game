@@ -27,6 +27,7 @@ columns = 5
 [node name="Item1" type="TextureRect" parent="CanvasLayer/GridContainer"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
+mouse_filter = 2
 expand_mode = 3
 
 [node name="number" type="Label" parent="CanvasLayer/GridContainer/Item1"]
@@ -47,6 +48,7 @@ vertical_alignment = 1
 [node name="Item2" type="TextureRect" parent="CanvasLayer/GridContainer"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
+mouse_filter = 2
 expand_mode = 3
 
 [node name="number" type="Label" parent="CanvasLayer/GridContainer/Item2"]
@@ -67,6 +69,7 @@ vertical_alignment = 1
 [node name="Item3" type="TextureRect" parent="CanvasLayer/GridContainer"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
+mouse_filter = 2
 expand_mode = 3
 
 [node name="number" type="Label" parent="CanvasLayer/GridContainer/Item3"]
@@ -87,6 +90,7 @@ vertical_alignment = 1
 [node name="Item4" type="TextureRect" parent="CanvasLayer/GridContainer"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
+mouse_filter = 2
 expand_mode = 3
 
 [node name="number" type="Label" parent="CanvasLayer/GridContainer/Item4"]
@@ -107,6 +111,7 @@ vertical_alignment = 1
 [node name="Item5" type="TextureRect" parent="CanvasLayer/GridContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
+mouse_filter = 2
 expand_mode = 3
 
 [node name="number" type="Label" parent="CanvasLayer/GridContainer/Item5"]

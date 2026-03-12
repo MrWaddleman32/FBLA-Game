@@ -67,6 +67,32 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_fu7sn")
 theme_override_styles/hover = SubResource("StyleBoxTexture_7vrkn")
 metadata/_edit_use_anchors_ = true
 
+[node name="PlayMarker1" type="ColorRect" parent="PlayButton"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.24000001
+anchor_top = 0.47100002
+anchor_right = -0.24000001
+anchor_bottom = 0.47100002
+offset_left = -0.05999756
+offset_top = -0.10675049
+offset_right = 90.94
+offset_bottom = 11.8932495
+
+[node name="PlayMarker2" type="ColorRect" parent="PlayButton"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.062
+anchor_top = 0.49400002
+anchor_right = 1.062
+anchor_bottom = 0.49400002
+offset_left = 0.09048462
+offset_top = -6.069504
+offset_right = 91.090485
+offset_bottom = 5.930496
+
 [node name="OptionsBTN" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -81,6 +107,32 @@ offset_bottom = -0.23999023
 texture_normal = ExtResource("6_cp0ys")
 ignore_texture_size = true
 stretch_mode = 5
+
+[node name="OptionsMarker1" type="ColorRect" parent="OptionsBTN"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.467
+anchor_top = 0.47100002
+anchor_right = -0.467
+anchor_bottom = 0.47100002
+offset_left = 0.1000061
+offset_top = -0.10675049
+offset_right = 91.100006
+offset_bottom = 11.8932495
+
+[node name="OptionsMarker2" type="ColorRect" parent="OptionsBTN"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.2470001
+anchor_top = 0.49400002
+anchor_right = 1.2470001
+anchor_bottom = 0.49400002
+offset_left = -0.10003662
+offset_top = -6.069504
+offset_right = 90.89996
+offset_bottom = 5.930496
 
 [node name="UI_Overlay_Manager" parent="." instance=ExtResource("7_yhxw7")]
 
@@ -97,6 +149,32 @@ texture_normal = ExtResource("8_yhxw7")
 ignore_texture_size = true
 stretch_mode = 6
 metadata/_edit_use_anchors_ = true
+
+[node name="QuitMarker1" type="ColorRect" parent="QuitBTN"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.41300002
+anchor_top = 0.47100002
+anchor_right = -0.41300002
+anchor_bottom = 0.47100002
+offset_left = 0.009010315
+offset_top = -0.10675049
+offset_right = 91.00901
+offset_bottom = 11.8932495
+
+[node name="QuitMarker2" type="ColorRect" parent="QuitBTN"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.133
+anchor_top = 0.43800002
+anchor_right = 1.133
+anchor_bottom = 0.43800002
+offset_left = 0.031036377
+offset_top = -0.021503448
+offset_right = 91.03104
+offset_bottom = 11.978497
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="OptionsBTN" to="UI_Overlay_Manager" method="_on_options_btn_pressed"]
